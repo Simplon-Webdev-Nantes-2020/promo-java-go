@@ -19,7 +19,7 @@ sections:
         new_window: false
         type: action
       - label: HTML CSS
-        url: /
+        url: /doc_html
         style: link
         icon_class: lorem-ipsum
         new_window: false
