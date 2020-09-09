@@ -18,7 +18,7 @@ sections:
         icon_class: lorem-ipsum
         new_window: false
         type: action
-      - label: HTML
+      - label: HTML CSS
         url: lorem-ipsum
         style: link
         icon_class: lorem-ipsum
