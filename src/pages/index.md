@@ -9,7 +9,7 @@ sections:
       This section can contain a subtitle or tagline. The recommended length is
       one to three sentences, but can be changed as you prefer.
     actions:
-      - label: Doc Java
+      - label: Java
         url: /doc_java
         style: primary
       - label: Doc Javascript
