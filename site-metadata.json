@@ -28,7 +28,7 @@
         }
     },
     "header": {
-        "title": "Libris",
+        "title": "",
         "logo_img": "images/logo_tiankod.png",
         "has_nav": true,
         "nav_links": [
