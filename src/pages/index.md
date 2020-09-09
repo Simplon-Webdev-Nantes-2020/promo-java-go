@@ -13,7 +13,7 @@ sections:
         url: /doc_java
         style: primary
       - label: Javascript
-        url: lorem-ipsum
+        url: /doc_javascript
         style: link
         icon_class: lorem-ipsum
         new_window: false
