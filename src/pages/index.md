@@ -20,7 +20,7 @@ sections:
         type: action
       - label: HTML CSS
         url: /doc_html
-        style: link
+        style: primary
         icon_class: lorem-ipsum
         new_window: false
         type: action
