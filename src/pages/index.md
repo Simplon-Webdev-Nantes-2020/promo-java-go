@@ -3,7 +3,7 @@ title: Home
 sections:
   - section_id: JavaWeb
     type: section_hero
-    title: Formation développeur web et web mobile
+    title: ''
     image: images/5.jpg
     content: >-
       Formation préparant au titre Développeur web et Web mobile (RNCP31114 niv
