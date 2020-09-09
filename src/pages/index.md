@@ -12,7 +12,7 @@ sections:
       - label: Doc Java
         url: /docs
         style: primary
-      - label: 'Doc '
+      - label: Doc Javascript
         url: lorem-ipsum
         style: link
         icon_class: lorem-ipsum
