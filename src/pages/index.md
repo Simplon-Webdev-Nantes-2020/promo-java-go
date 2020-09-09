@@ -10,7 +10,7 @@ sections:
       one to three sentences, but can be changed as you prefer.
     actions:
       - label: Doc Java
-        url: /doc
+        url: /doc_java
         style: primary
       - label: Doc Javascript
         url: lorem-ipsum
