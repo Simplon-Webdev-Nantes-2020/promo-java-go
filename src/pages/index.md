@@ -1,7 +1,7 @@
 ---
 title: Home
 sections:
-  - section_id: hero
+  - section_id: JavaWeb
     type: section_hero
     title: Formation développeur web et web mobile
     image: images/5.jpg
