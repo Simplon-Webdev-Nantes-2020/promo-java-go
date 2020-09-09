@@ -12,6 +12,12 @@ sections:
       - label: Doc Java
         url: /docs
         style: primary
+      - label: lorem-ipsum
+        url: lorem-ipsum
+        style: link
+        icon_class: lorem-ipsum
+        new_window: false
+        type: action
   - section_id: features
     type: section_grid
     col_number: three
