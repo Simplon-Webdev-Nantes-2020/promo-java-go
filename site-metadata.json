@@ -33,14 +33,14 @@
         "has_nav": true,
         "nav_links": [
             {
-                "label": "Java",
-                "url": "/docs",
+                "label": "Home",
+                "url": "/",
                 "style": "link",
                 "has_subnav": false
             },
             {
-                "label": "Home",
-                "url": "/",
+                "label": "Java",
+                "url": "/docs",
                 "style": "link",
                 "has_subnav": false
             },
