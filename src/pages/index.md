@@ -4,7 +4,7 @@ sections:
   - section_id: JavaWeb
     type: section_hero
     title: Java promo 1- Nantes Simplon Grand Ouest
-    image: images/5.jpg
+    image: images/computer-1873831_1920.png
     content: >-
       Formation préparant au titre Développeur web et Web mobile (RNCP31114 niv
       5)
