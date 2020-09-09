@@ -114,6 +114,14 @@
                 "style": "icon",
                 "icon_class": "fa-github",
                 "new_window": true
+            },
+            {
+                "label": "lorem-ipsum",
+                "url": "lorem-ipsum",
+                "style": "link",
+                "icon_class": "lorem-ipsum",
+                "new_window": false,
+                "type": "action"
             }
         ]
     },
