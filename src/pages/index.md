@@ -13,7 +13,7 @@ sections:
     actions:
       - label: Java
         url: /doc_java
-        style: icon
+        style: primary
       - label: HTML CSS
         url: /doc_html
         style: primary
