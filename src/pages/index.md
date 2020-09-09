@@ -6,8 +6,10 @@ sections:
     title: Formation développeur web et web mobile
     image: images/5.jpg
     content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
+      Formation préparant au titre Développeur web et Web mobile (RNCP31114 niv
+      5)
+
+      Basée sur les technologies Java, Spring, ReactJs
     actions:
       - label: Java
         url: /doc_java
