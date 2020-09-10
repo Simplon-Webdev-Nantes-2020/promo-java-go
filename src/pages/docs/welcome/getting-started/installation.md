@@ -2,6 +2,7 @@
 title: Installation
 weight: 1
 template: docs
+doc_sections: welcome
 ---
 
 <div class="note">

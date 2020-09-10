@@ -2,6 +2,7 @@
 title: La syntaxe
 weight: 4
 template: docs
+doc_sections: java
 ---
 
 ## La grammaire

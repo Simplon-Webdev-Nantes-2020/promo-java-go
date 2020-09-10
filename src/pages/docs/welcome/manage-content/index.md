@@ -4,6 +4,7 @@ excerpt: >-
   In this section you'll learn how to add syntax highlighting, examples,
   callouts and much more.
 template: docs
+doc_sections: welcome
 ---
 
 <div class="note">

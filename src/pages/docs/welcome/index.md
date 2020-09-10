@@ -1,6 +1,7 @@
 ---
 title: Welcome to Libris
 template: docs
+doc_sections: welcome
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt id ante id varius. Fusce a gravida dolor.

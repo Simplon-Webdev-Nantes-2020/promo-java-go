@@ -2,6 +2,7 @@
 title: Définition de la POO
 weight: 2
 template: docs
+doc_sections: java
 ---
 
 ## Le paradigme

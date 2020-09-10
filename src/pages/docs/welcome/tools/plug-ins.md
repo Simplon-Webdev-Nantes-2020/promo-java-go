@@ -2,6 +2,7 @@
 title: Plug-ins
 weight: 2
 template: docs
+doc_sections: welcome
 ---
 
 <div class="note">

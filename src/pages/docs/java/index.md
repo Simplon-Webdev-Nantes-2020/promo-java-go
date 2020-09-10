@@ -1,6 +1,7 @@
 ---
-title: Tutorial
+title: Welcome to Java
 template: docs
+doc_sections: java
 ---
 
-Vous trouverez la doc pour Java, git, etc..
+Vous etes sur le 2ème menu Java

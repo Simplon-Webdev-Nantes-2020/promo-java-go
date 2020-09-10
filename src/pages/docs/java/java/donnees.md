@@ -2,6 +2,7 @@
 title: Les types de données
 weight: 3
 template: docs
+doc_sections: java
 ---
 
 ## Les types primitifs

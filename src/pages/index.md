@@ -12,16 +12,16 @@ sections:
       Basée sur les technologies Java, Spring, ReactJs
     actions:
       - label: Java
-        url: /doc_java
+        url: /docs/java
         style: primary
       - label: HTML CSS
-        url: /doc_html
+        url: /docs/html
         style: primary
         icon_class: lorem-ipsum
         new_window: false
         type: action
       - label: Javascript
-        url: /doc_javascript
+        url: /docs/javascript
         style: primary
         icon_class: lorem-ipsum
         new_window: false
