@@ -8,8 +8,10 @@ export default class DocsMenu extends React.Component {
     render() {
         let site = _.get(this.props, 'site', null);
         let page = _.get(this.props, 'page', null);
-        let root_docs_path = _.get(site, 'data.doc_sections.root_docs_path', null);
+        let root_docs_path = _.get(this.props, 'root_docs_path', null);
+        let doc_section = _.get(this.props, 'doc_section', null);
         let root_page = getPage(this.props.pageContext.pages, root_docs_path);
+        let sections = _.get(site, 'data.doc_sections.'+(doc_section?doc_section+'.':"")+'sections', null);
         return (
             <nav id="docs-nav" className="docs-nav">
               <div id="docs-nav-inside" className="docs-nav-inside sticky">
@@ -19,7 +21,7 @@ export default class DocsMenu extends React.Component {
                     <li className={classNames('docs-menu-item', {'current': _.get(page, 'url', null) === _.get(root_page, 'url', null)})}>
                       <Link to={withPrefix(_.get(root_page, 'url', null))}>{_.get(root_page, 'frontmatter.title', null)}</Link>
                     </li>
-                    {_.map(_.get(site, 'data.doc_sections.sections', null), (section, section_idx) => {
+                    {_.map(sections, (section, section_idx) => {
                         let section_path = pathJoin(root_docs_path, section);
                         let section_page = getPage(this.props.pageContext.pages, section_path);
                         let child_pages = _.orderBy(getPages(this.props.pageContext.pages, section_path), 'frontmatter.weight');

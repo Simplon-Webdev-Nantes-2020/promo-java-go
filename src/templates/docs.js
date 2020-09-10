@@ -18,13 +18,23 @@ export const query = graphql`
 
 export default class Docs extends React.Component {
     render() {
-        let root_docs_path = _.trim(_.get(this.props, 'pageContext.site.data.doc_sections.root_docs_path', null), '/');
+        let doc_section = _.get(this.props, 'pageContext.frontmatter.doc_sections', null);
+        let props_root_docs_path = 'pageContext.site.data.doc_sections.' + 
+                                   (doc_section?doc_section+".":"") +
+                                   'root_docs_path';
+
+        let root_docs_path = _.trim(_.get(this.props, props_root_docs_path, null), '/');
         let current_page_url = _.trim(_.get(this.props, 'pageContext.url', null), '/');
         return (
             <Layout {...this.props}>
             <div className="inner outer">
               <div className="docs-content">
-                <DocsMenu {...this.props} page={this.props.pageContext} site={this.props.pageContext.site} />
+                <DocsMenu {...this.props} 
+                          page={this.props.pageContext} 
+                          site={this.props.pageContext.site} 
+                          doc_section={doc_section}
+                          root_docs_path= {root_docs_path} 
+                />
                 <article className="post type-docs">
                   <div className="post-inside">
                     <header className="post-header">
@@ -51,7 +61,7 @@ export default class Docs extends React.Component {
                 </article>
                 <nav id="page-nav" className="page-nav">
                   <div id="page-nav-inside" className="page-nav-inside sticky">
-                    <h2 className="page-nav-title">Jump to Section</h2>
+                    <h2 className="page-nav-title">Table des matières</h2>
                     <div id="page-nav-link-container" />
                   </div>
                 </nav>

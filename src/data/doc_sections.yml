@@ -1,9 +1,18 @@
 root_docs_path: /docs
 sections:
+  - welcome
   - java
-  - getting-started
-  - ui-components
-  - manage-content
-  - tools
-  - faq
-  - community
+welcome:
+  root_docs_path: /docs/welcome
+  sections:
+    - getting-started
+    - ui-components
+    - manage-content
+    - tools
+    - faq
+    - community
+java:
+  root_docs_path: /docs/java
+  sections:
+    - java
+    - spring

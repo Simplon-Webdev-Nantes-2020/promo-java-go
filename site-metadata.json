@@ -33,16 +33,23 @@
         "has_nav": true,
         "nav_links": [
             {
-                "label": "Home",
+                "label": "Accueil",
                 "url": "/",
                 "style": "link",
                 "has_subnav": false
             },
             {
-                "label": "Documentation",
-                "url": "/docs",
+                "label": "Tutoriels",
+                "url": "#",
                 "style": "link",
-                "has_subnav": false
+                "has_subnav": true,
+                "subnav_links": [
+                    {
+                        "label": "Java",
+                        "url": "/docs/java",
+                        "style": "link"
+                    }
+                ]
             },
             {
                 "label": "Blog",
@@ -51,11 +58,16 @@
                 "has_subnav": false
             },
             {
-                "label": "Sample Pages",
+                "label": "Welcome",
                 "url": "#",
                 "style": "link",
                 "has_subnav": true,
                 "subnav_links": [
+                    {
+                        "label": "Libris",
+                        "url": "/docs/welcome",
+                        "style": "link"
+                    },
                     {
                         "label": "Overview",
                         "url": "/overview",
@@ -65,14 +77,14 @@
                         "label": "Showcase",
                         "url": "/showcase",
                         "style": "link"
+                    },
+                    {
+                        "label": "Style Guide",
+                        "url": "/style-guide",
+                        "style": "link",
+                        "has_subnav": false
                     }
                 ]
-            },
-            {
-                "label": "Style Guide",
-                "url": "/style-guide",
-                "style": "link",
-                "has_subnav": false
             }
         ],
         "url": "tiankod"
