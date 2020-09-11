@@ -4,4 +4,4 @@ template: docs
 doc_sections: java
 ---
 
-Vous etes sur le 2ème menu Java
+Vous trouverez la doc pour Java, Spring, Maven, etc...

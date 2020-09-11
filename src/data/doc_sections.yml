@@ -14,5 +14,5 @@ welcome:
 java:
   root_docs_path: /docs/java
   sections:
-    - java
+    - general
     - spring
