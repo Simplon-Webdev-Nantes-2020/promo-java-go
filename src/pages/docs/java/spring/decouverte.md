@@ -132,10 +132,10 @@ et d'autres informations qu'il est plus rare d'avoir à configurer.
 
 ```xml
 <parent>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-parent</artifactId>
-	<version>1.5.10.BUILD-SNAPSHOT</version>
-	<relativePath/>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.10.BUILD-SNAPSHOT</version>
+    <relativePath/>
 </parent>
 ```
 
@@ -143,9 +143,9 @@ et d'autres informations qu'il est plus rare d'avoir à configurer.
 
 ```xml
 <properties>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	<java.version>1.8</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
 </properties>
 ```
 
@@ -153,16 +153,16 @@ et d'autres informations qu'il est plus rare d'avoir à configurer.
 
 ```xml
 <dependencies>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-web</artifactId>
-	</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-test</artifactId>
-		<scope>test</scope>
-	</dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
 </dependencies>
 ```
 
@@ -189,9 +189,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringbootHelloworldApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringbootHelloworldApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringbootHelloworldApplication.class, args);
+    }
 }
 ```
 
@@ -223,13 +223,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HelloworldController {
-	
-	@RequestMapping("/hello")
-	@ResponseBody
-	public String hello()
-	{
-		return "Helloworld";
-	}
+    
+    @RequestMapping("/hello")
+    @ResponseBody
+    public String hello()
+    {
+        return "Helloworld";
+    }
 }
 ```
 
@@ -241,7 +241,7 @@ Pour lancer une application SpringBoot, il suffit simplement de faire un clique 
 
 On peut suivre le lancement du serveur dont le log s'affiche automatiquement dans la console :
 
-```console
+```log
 2018-01-02 12:10:15.754  INFO 12280 --- [           main] c.s.s.h.SpringbootHelloworldApplication  : Starting SpringbootHelloworldApplication on SIMFOR094 with PID 12280 (C:\data\workspace-s\springboot-helloworld\target\classes started by Utilisateur in C:\data\workspace-s\springboot-helloworld)
 2018-01-02 12:10:15.756  INFO 12280 --- [           main] c.s.s.h.SpringbootHelloworldApplication  : No active profile set, falling back to default profiles: default
 2018-01-02 12:10:15.789  INFO 12280 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1445d7f: startup date [Tue Jan 02 12:10:15 CET 2018]; root of context hierarchy
@@ -272,7 +272,7 @@ On peut suivre le lancement du serveur dont le log s'affiche automatiquement dan
 
 On y observe alors le lancement du serveur Tomcat :
 
-```console
+```log
 2018-01-02 12:10:15.754  INFO 12280 --- [           main] c.s.s.h.SpringbootHelloworldApplication  : Starting SpringbootHelloworldApplication on SIMFOR094 with PID 12280 (C:\data\workspace-s\springboot-helloworld\target\classes started by Utilisateur in C:\data\workspace-s\springboot-helloworld)
 2018-01-02 12:10:15.756  INFO 12280 --- [           main] c.s.s.h.SpringbootHelloworldApplication  : No active profile set, falling back to default profiles: default
 2018-01-02 12:10:15.789  INFO 12280 --- [           main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1445d7f: startup date [Tue Jan 02 12:10:15 CET 2018]; root of context hierarchy
@@ -283,7 +283,7 @@ On y observe alors le lancement du serveur Tomcat :
 
 le mapping des URL vers les méthodes java associées (notamment notre méthode hello) :
 
-```console
+```log
 2018-01-02 12:10:16.863  INFO 12280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/hello]}" onto public java.lang.String co.simplon.springboot.helloworld.HelloworldController.hello()
 2018-01-02 12:10:16.866  INFO 12280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
 2018-01-02 12:10:16.866  INFO 12280 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
