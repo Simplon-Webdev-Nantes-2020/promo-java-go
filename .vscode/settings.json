@@ -5,5 +5,11 @@
         "jsx",
         "jsx-attr",
         "jsx-tags"
+    ],
+    "cSpell.words": [
+        "aujourd'hui",
+        "classpath",
+        "coeur",
+        "junit"
     ]
 }
