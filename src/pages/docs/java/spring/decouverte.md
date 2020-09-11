@@ -9,35 +9,38 @@ doc_sections: java
 
 ## Introduction
 
-Spring est un framework Java open source qui facilite et structure le développement d'applications java. Créé par Rod Jonhson, il est aujourd'hui porté par la société Pivotal.
- 
+Spring est un framework Java open source qui facilite et structure le développement d'applications java. Créé par Rod Jonhson, il est aujourd'hui porté par la société Pivotal.  
 Initialement dénommé Spring Framework, il existe et est utilisé dans de nombreux projets depuis de nombreuses années. 
-Au fils du temps, il a évolué pour fournir toujours plus de services et permettre aux développeurs de travailler plus vite, plus facilement et de manière plus structurée. 
+Au fils du temps, il a évolué pour fournir toujours plus de services et permettre aux développeurs de travailler plus vite, plus facilement et de manière plus structurée.  
 Spring Framework est composé de sept modules :
- * Spring Core
- * Spring AOP
- * Spring DAO
- * Spring ORM
- * Spring Web
- * Spring Context
+
+* Spring Core
+* Spring AOP
+* Spring DAO
+* Spring ORM
+* Spring Web
+* Spring Context
 
 Bien qu'ils soient prévus pour être indépendants, il est fréquent et souvent intéressant d'utiliser au maximum les services qu'ils proposent.
 Spring est un framework extrêmement puissant, proposant des services très intéressants mais il un a un gros défaut : il est assez difficile à configurer.
 
-C'est pour pallier ce défaut qu'a été créé SpringBoot. Bien que l'objectif principal soit toujours le même (permettre de développer plus facilement, plus rapidement et de manière structurée des applications java), 
+C'est pour pallier ce défaut qu'a été créé SpringBoot. Bien que l'objectif principal soit toujours le même (permettre de développer plus facilement, plus rapidement et de manière structurée des applications java),
 SpringBoot facilite la mise en place d'un projet qui utilisera les fonctionnalités proposées par Spring en fournissant :
- * une configuration par défaut pour les projets Spring
- * un site qui centralise les ressources : https://start.spring.io/
- * un assistant intégré dans Eclipse : STS (Spring Tool Suite)
- * une intégration forte du serveur d'application (Tomcat version embarquée dans les projets SpringBoot)
- * un recours massif aux annotations (pour éviter les fichiers de configurations)
- * l'encapsulation d'un grand nombre de librairie java.
- * un cadre de bonnes pratiques : test, MVC...
+
+* une configuration par défaut pour les projets Spring
+* un site qui centralise les ressources : https://start.spring.io/
+* un assistant intégré dans Eclipse : STS (Spring Tool Suite)
+* une intégration forte du serveur d'application (Tomcat version embarquée dans les projets SpringBoot)
+* un recours massif aux annotations (pour éviter les fichiers de configurations)
+* l'encapsulation d'un grand nombre de librairie java.
+* un cadre de bonnes pratiques : test, MVC...
 
 Par ailleurs, SpringBoot est particulièrement efficace dans la création d'API Rest (ou RestFull). 
 
 ### Les Concepts fondateurs
+
 Spring s'appuie sur 3 concepts :
+
 * l'inversion de contrôle (IOC)
 * la programmation orienté aspect (POA)
 * une couche d'abstraction  
@@ -51,6 +54,7 @@ La couche d'abstraction permet d'intégrer facilement d'autres frameworks ou bib
 Pour la suite de ce tutoriel, en plus d'Eclipse et Mysql que nous avons déjà installés et configurés, nous vous conseillons d'utiliser les outils présentés dans ce chapitre.
 
 ### STS
+
 STS est un plugin Eclipse qui ajoute une perspective dédiée à la création et la gestion d'application SpringBoot. 
 Pour l'installer, rendez-vous sur le marketplace et rechercher STS et suivez les instructions.
 
@@ -63,6 +67,7 @@ Dans ce chapitre, nous allons créer une applications web avec SpringBoot from s
 ### Création d'un projet nouveau SpringBoot
 
 #### Création du projet
+
 Dans la perspective Spring, créer un nouveau projet SpringBoot en passant par New \ Spring Boot Starter Project.
 
 Dans la fenêtre de création qui s'affiche, renseignez les informations de votre projet en veillant à conserver comme Service URL "http://start.spring.io", comme type "Maven" et Java Version "8" et cliquez sur Next.
@@ -76,95 +81,106 @@ Ensuite, sélectionnez Spring Boot Version "1.5.10.BUILD-SNAPSHOT" (Attention : 
 Félicitation, votre projet SpringBoot est créé.
 
 #### Behind the scene
+
 A cette étape, notre projet est déja bien avancé et STS a construit beaucoup de choses :
- * Le projet java a été créé avec la structure de projet SpringBoot
- * Un fichier de configuration Maven avec les dépendances "Web" a été créé
- * Les librairies du fichier de configuration sont téléchargées et ajoutées au classpath (rendez-vous dans le répertoire "Maven Dependencies" pour vous en assurer)
- * La classe de lancement à été créée
+
+* Le projet java a été créé avec la structure de projet SpringBoot
+* Un fichier de configuration Maven avec les dépendances "Web" a été créé
+* Les librairies du fichier de configuration sont téléchargées et ajoutées au classpath (rendez-vous dans le répertoire "Maven Dependencies" pour vous en assurer)
+* La classe de lancement à été créée
 
 On entrevoit ici la puissance de SpringBoot qui, en quelques secondes, a créé un ensemble cohérent et structurant pour notre application en y incluant les librairies et TOUTES leurs dépendances.
 
-#### La structure d'un projet Spring Boot 
+#### La structure d'un projet Spring Boot
+
 SpringBoot apporte aux développeurs une structuration forte pour leurs projets. En plus d'être une bonne pratique, ceci est important pour Spring qui parcourt ces repertoires pour gérer le code sources (identifications des classes "spéciales", injection de classes...), les ressources...
 
 En parcourant notre projet SpringBoot, on peut déjà observer que les répertoires suivants ont été créés :
- * **src/main/java** : répertoire racine pour le code source de notre application
- * **src/main/resources** : répertoire racine pour les ressources pour notre application
- * **src/main/resources/static** : répertoire pour les ressources statiques à déployer(fichiers html, css...)
- * **src/test/java** : repertoire destiné à recevoir les tests (junit...)
- * **Maven Dependencies** : repertoire dans lequel Maven charge les dépendances du projet
+
+* **src/main/java** : répertoire racine pour le code source de notre application
+* **src/main/resources** : répertoire racine pour les ressources pour notre application
+* **src/main/resources/static** : répertoire pour les ressources statiques à déployer(fichiers html, css...)
+* **src/test/java** : repertoire destiné à recevoir les tests (junit...)
+* **Maven Dependencies** : repertoire dans lequel Maven charge les dépendances du projet
 
 En plus de ces répertoires, des fichiers de configurations essentiel au bon fonctionnement de notre projet ont été générés.
 
 ##### pom.xml
+
 Ce fichier présent à la racine du projet est un fichier xml utilisé pour le pilotage de Maven. On y trouve :
- * des élements d'identifications de notre projet (méta informations)
- * la configuration Spring Boot (package, version...)
- * les propriétés pour le projet (version java, encodage...)
- * les dépendances vers les librairies utiles au projet
- 
-et d'autres informations qu'il est plus rare d'avoir à configurer.
 
+* des élements d'identifications de notre projet (méta informations)
+* la configuration Spring Boot (package, version...)
+* les propriétés pour le projet (version java, encodage...)
+* les dépendances vers les librairies utiles au projet
 
-**Bloc d'identification**
+et d'autres informations qu'il est plus rare d'avoir à configurer.  
+
+###### Bloc d'identification
+
 ```xml
-	<groupId>co.simplon.example</groupId>
-	<artifactId>springboot-helloworld</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+<groupId>co.simplon.example</groupId>
+<artifactId>springboot-helloworld</artifactId>
+<version>0.0.1-SNAPSHOT</version>
+<packaging>jar</packaging>
 
-	<name>springboot-helloworld</name>
-	<description>Demo project for Spring Boot</description>
+<name>springboot-helloworld</name>
+<description>Demo project for Spring Boot</description>
 ```
 
-**Bloc SpringBoot**
+###### Bloc SpringBoot
+
 ```xml
-	<parent>
+<parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>1.5.10.BUILD-SNAPSHOT</version>
+	<relativePath/>
+</parent>
+```
+
+###### Bloc de propriétés du projet
+
+```xml
+<properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	<java.version>1.8</java.version>
+</properties>
+```
+
+###### Bloc de dépendances
+
+```xml
+<dependencies>
+	<dependency>
 		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.BUILD-SNAPSHOT</version>
-		<relativePath/>
-	</parent>
+		<artifactId>spring-boot-starter-web</artifactId>
+	</dependency>
+
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-test</artifactId>
+		<scope>test</scope>
+	</dependency>
+</dependencies>
 ```
-
-**Bloc de propriétés du projet**
-```xml
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
-	</properties>
-```
-
-**Bloc de dépendances**
-```xml
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-```	
 
 C'est gràce à ce fichier que le projet java sera configuré et que l'ensemble des librairies utiles seront téléchargées et intégrées au projet Java.
 
 ##### application.properties
+
 Il s'agit d'un fichier de propriété java classique (clés/valeurs).
 Ce fichier a vocation à contenir **TOUTES** les informations de configuration des composants utilisés par le projet (composants encapsulés par SpringBoot).
 
 Pour plus de détails sur les mots clefs utilisables, cliquez [ici](https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html).
 
 ##### la classe de lancement SpringBoot
+
 Il s'agit de la classe java qui servira de point d'entrée pour notre application. 
 Dans un projet Java classique, on pourrait la comparer avec la classe portant la méthode main.
 
-```	 java
+```java
 package co.simplon.springboot.helloworld;
 
 import org.springframework.boot.SpringApplication;
@@ -177,7 +193,7 @@ public class SpringbootHelloworldApplication {
 		SpringApplication.run(SpringbootHelloworldApplication.class, args);
 	}
 }
-```	
+```
 
 On remarque que la classe qui a été générée est surmontée d'une annotation **@SpringBootApplication**. 
 Cette annotation va permettre à Spring de savoir que c'est cette classe qu'il faut utiliser comme point d'entrée lors du lancement de notre application.
@@ -185,19 +201,20 @@ Cette annotation va permettre à Spring de savoir que c'est cette classe qu'il f
 #### Codons un peu
 
 ##### Helloworld
-Pour la suite de notre projet, nous allons ajouter une nouvelle classe nommée HelloworldController.<br>
-Dans le monde Spring, le mot 'Controller' désigne la classe qui fournit les services web (équivalent des Servlet en Java Web).<br>
+
+Pour la suite de notre projet, nous allons ajouter une nouvelle classe nommée HelloworldController.  
+Dans le monde Spring, le mot 'Controller' désigne la classe qui fournit les services web (équivalent des Servlet en Java Web).  
 Pour définir un 'Controller' au sens Spring, on va ajouter à la classe précédemment créée l'annotations **@Controller**.
 
 Grâce à cette annotation, Spring identifiera cette classe comme une classe 'spéciale' sur laquelle il travaillera.
 
-Créez ensuite une fonction hello qui renvoie la chaîne de caractère "Helloworld".<br>
-Pour relier cette méthode à une URI, on va ajouter à la déclaration de la méthode l'annotation **@RequestMapping(***chemin***).** (chemin étant la chaîne de caractère qui sera ajoutée à la fin de l'URL).<br>
+Créez ensuite une fonction hello qui renvoie la chaîne de caractère "Helloworld".  
+Pour relier cette méthode à une URI, on va ajouter à la déclaration de la méthode l'annotation **@RequestMapping(***chemin***).** (chemin étant la chaîne de caractère qui sera ajoutée à la fin de l'URL).  
 Comme notre méthode retourne un variable (ici une chaîne de caractères), il faut aussi ajouter l'annotation **@ResponseBody**.
 
 Ainsi, le code final de notre classe HelloworldController.java sera :
 
-```	 java
+```java
 package co.simplon.springboot.helloworld;
 
 import org.springframework.stereotype.Controller;
@@ -214,8 +231,10 @@ public class HelloworldController {
 		return "Helloworld";
 	}
 }
-```	
+```
+
 ##### Lancement d'un projet SpringBoot
+
 Les développeurs de SpringBoot ont eu la bonne idée d'intégrer un serveur Tomcat à SpringBoot. Pour la phase de développement, il n'est donc plus nécessaire d'installer un serveur d'application, de le configurer, de l'intégrer dans Eclipse...
 
 Pour lancer une application SpringBoot, il suffit simplement de faire un clique droit sur le projet, et lancer **Run as... \ Spring Boot App** (ou Debug as ... \Spring Boot App).
@@ -275,14 +294,16 @@ le mapping des URL vers les méthodes java associées (notamment notre méthode 
 
 ...
 
-Enfin, rendez-vous dans votre navigateur préféré à l'adresse : http://localhost:8080/hello.
+Enfin, rendez-vous dans votre navigateur préféré à l'adresse : http://localhost:8080/hello.  
 Celui-ci vous affichera alors "Helloworld".
 
 ##### Observations
+
 Avec ce projet d'introduction, vous avez pu découvrir que :
+
 * SpringBoot accélère la mise en place d'un projet
 * SpringBoot utilise Maven (ou Gradle) pour gérer les dépendances du projet
 * SpringBoot nécessite peu de configuration
 * Cette configuration se fait dans les classes java à l'aide d'annotations (dont beaucoup restent à découvrir)
 * SpringBoot fournit une encapsulation forte de serveur d'application (avec une configuration par défaut)
- * SpringBoot c'est cool ?
+* SpringBoot c'est cool ?

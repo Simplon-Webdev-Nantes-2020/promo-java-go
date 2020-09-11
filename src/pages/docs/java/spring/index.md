@@ -10,4 +10,3 @@ doc_sections: java
 ### Spring boot
 
 blablabla
-
