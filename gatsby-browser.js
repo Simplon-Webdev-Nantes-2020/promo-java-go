@@ -4,20 +4,23 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-exports.onInitialClientRender = () => {
+import "prism-themes/themes/prism-a11y-dark.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+
+export function onInitialClientRender() {
     if ('onGatsbyInitialClientRender' in window && typeof window.onGatsbyInitialClientRender === 'function') {
         window.onGatsbyInitialClientRender();
     }
-};
+}
 
-exports.onRouteUpdate = () => {
+export function onRouteUpdate() {
     if ('onGatsbyRouteUpdate' in window && typeof window.onGatsbyRouteUpdate === 'function') {
         window.onGatsbyRouteUpdate();
     }
-};
+}
 
-exports.onPreRouteUpdate = () => {
+export function onPreRouteUpdate() {
     if ('onGatsbyPreRouteUpdate' in window && typeof window.onGatsbyPreRouteUpdate === 'function') {
         window.onGatsbyPreRouteUpdate();
     }
-};
+}

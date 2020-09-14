@@ -17,6 +17,13 @@ module.exports = {
             options: {
               plugins: [
                 {
+                  resolve: `gatsby-remark-prismjs`,
+                  options: {
+                    aliases:{sh: "bash", js:"javascript"},
+                    showLineNumbers: true,
+                  }
+                },
+                {
                   resolve: `gatsby-remark-images`,
                   options: {
                     maxWidth: 800,
