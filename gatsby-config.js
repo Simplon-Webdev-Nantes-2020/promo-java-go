@@ -22,12 +22,6 @@ module.exports = {
                     maxWidth: 800,
                   },
                 },
-                {
-                    resolve: `gatsby-remark-vscode`,
-                    options: {
-                      theme: 'Monokai'
-                    }
-                },
               ],
             },
         },
