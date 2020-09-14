@@ -7,7 +7,8 @@
 
 .post.type-docs {
   margin-bottom: 5.625em;
-  max-width: 800px;
+  margin-left: 0.5em;
+  // max-width: 800px;
 
   h1 {
     font-size: 1.875rem;
@@ -70,11 +71,11 @@
   .post-title {
     font-size: 1.875rem;
     margin: 0 0 2.5rem;
-    padding: 0 7%;
+    padding: 0 2%;
   }
 
   .post-content {
-    padding: 0 7%;
+    padding: 0 2%;
   }
 }
 
@@ -279,13 +280,13 @@
   }
 
   .docs-nav {
-    padding-right: 1.5em;
-    width: 12.5em;
+    padding-right: 0.1em;
+    width: 10.5em;
   }
 
   .page-nav {
-    padding-left: 1.5em;
-    width: 9.5em;
+    padding-left: 0.5em;
+    width: 6.5em;
   }
 
   .docs-nav-toggle {
