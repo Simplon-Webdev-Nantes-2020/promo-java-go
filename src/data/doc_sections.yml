@@ -16,3 +16,10 @@ java:
   sections:
     - general
     - spring
+html:
+  root_docs_path: /docs/html
+  sections:
+javascript:
+  root_docs_path: /docs/javascript
+  sections:
+    - typescript
