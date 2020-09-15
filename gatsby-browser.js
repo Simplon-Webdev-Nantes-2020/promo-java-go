@@ -4,9 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import "prism-themes/themes/prism-a11y-dark.css";
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
-
 export function onInitialClientRender() {
     if ('onGatsbyInitialClientRender' in window && typeof window.onGatsbyInitialClientRender === 'function') {
         window.onGatsbyInitialClientRender();

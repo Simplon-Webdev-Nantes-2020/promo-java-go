@@ -260,6 +260,3 @@ function anchorForId(id) {
   anchor.innerHTML = '<span class="icon-copy" aria-hidden="true"></span><span class="screen-reader-text">Copy</span>';
   return anchor;
 }
-
-// Syntax Highlighter
-// Prism.highlightAll();

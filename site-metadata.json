@@ -18,6 +18,16 @@
                 "has_subnav": true,
                 "subnav_links": [
                     {
+                        "label": "HTML CSS",
+                        "url": "/docs/html",
+                        "style": "link"
+                    },
+                    {
+                        "label": "JavaScript / TypeScript",
+                        "url": "/docs/javascript",
+                        "style": "link"
+                    },
+                    {
                         "label": "Java",
                         "url": "/docs/java",
                         "style": "link"

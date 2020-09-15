@@ -17,13 +17,6 @@ module.exports = {
             options: {
               plugins: [
                 {
-                  resolve: `gatsby-remark-prismjs`,
-                  options: {
-                    aliases:{sh: "bash", js:"javascript"},
-                    showLineNumbers: true,
-                  }
-                },
-                {
                   resolve: `gatsby-remark-images`,
                   options: {
                     maxWidth: 800,
@@ -34,6 +27,12 @@ module.exports = {
                   options: {
                     target: "_blank",
                     rel: "nofollow"
+                  }
+                },
+                {
+                  resolve: `gatsby-remark-vscode`,
+                  options: {
+                    theme: 'Monokai' 
                   }
                 },
               ],

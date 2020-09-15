@@ -343,17 +343,3 @@
     }
   }
 }
-
-// prism ajout num de lignes
-.gatsby-highlight {
-  background-color: #2b2b2b;
-//  margin: 0.5em 0;
-//  padding: 0.5em;
-  overflow: auto;
-}
-
-.gatsby-highlight pre[class*="language-"].line-numbers {
-  padding: 0;
-  padding-left: 2em;
-  overflow: initial;
-}
