@@ -290,7 +290,7 @@ input[type="reset"],
   border: 2px solid _palette(accent);
   border-radius: 1.75em;
   box-sizing: border-box;
-  color: #fff;
+  color: _palette(blanc);
   display: inline-block;
   font-size: 14px;
   font-weight: bold;
@@ -320,7 +320,7 @@ input[type="reset"],
   &:focus,
   &:active {
     background-color: _palette(accent);
-    color: #fff;
+    color: _palette(blanc);
   }
 }
 
@@ -357,26 +357,26 @@ input[type="reset"],
 
 .has-gradient {
   .button {
-    background-color: #fff;
-    border-color: #fff;
+    background-color: _palette(blanc);
+    border-color: _palette(blanc);
     color: _palette(accent);
 
     &:hover,
     &:focus,
     &:active {
       background-color: transparent;
-      color: #fff;
+      color: _palette(blanc);
     }
   }
 
   .button-secondary {
     background-color: transparent;
-    color: #fff;
+    color: _palette(blanc);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: #fff;
+      background-color: _palette(blanc);
       color: _palette(accent);
     }
   }
@@ -461,7 +461,7 @@ img {
   background: _palette(accent);
   background: -webkit-linear-gradient(left,_palette(accent-alt), _palette(accent));
   background: linear-gradient(to right, _palette(accent-alt), _palette(accent));
-  color: #fff;
+  color: _palette(blanc);
   position: relative;
 }
 
