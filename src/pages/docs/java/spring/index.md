@@ -7,6 +7,6 @@ template: docs
 doc_sections: java
 ---
 
-### Spring boot
+## Spring boot
 
 blablabla

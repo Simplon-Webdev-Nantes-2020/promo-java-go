@@ -459,8 +459,8 @@ img {
 /* Background gradient */
 .has-gradient {
   background: _palette(accent);
-  background: -webkit-linear-gradient(left,_palette(accent-alt), _palette(accent));
-  background: linear-gradient(to right, _palette(accent-alt), _palette(accent));
+  background: -webkit-linear-gradient(left,_palette(gradient1), _palette(gradient2));
+  background: linear-gradient(to right, _palette(gradient1), _palette(gradient2));
   color: _palette(blanc);
   position: relative;
 }
@@ -473,7 +473,7 @@ img {
   background-size: cover;
   bottom: 0;
   left: 0;
-  opacity: 1;
+  opacity: 0.1;
   position: absolute;
   right: 0;
   top: 0;

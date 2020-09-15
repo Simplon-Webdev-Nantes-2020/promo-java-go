@@ -10,14 +10,15 @@ $font: (
 $palette: (
   primary:           #000000, //par défaut
   secondary:         #283040, //décliné de la couleur par défaut
-  meta:              #67758d, //décliné de la couleur par défaut
+  meta:              #5b677c, //décliné de la couleur par défaut
   border:            #b9c0ca, //bordure des panels
   bg:                #f7f9fb, //couleur de fond
   blanc:             #ffffff, //blanc
   note:              #fcb41d, //couleur div avec class="note"
   important:         #fc381d, //couleur div avec class="important"
   accent:            #D10033, //couleur accentuée (link, hover, bouton, ...) 
-  accent-alt:        #f1c1c1, //dégradé de couleur de départ (arrivée => accent)
+  gradient1:         #928f8f, //dégradé de couleur de départ
+  gradient2:         #2a2121, //dégradé de couleur d'arrivée
 );
 
 @import "imports/functions";
