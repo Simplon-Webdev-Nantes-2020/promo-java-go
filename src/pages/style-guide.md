@@ -57,10 +57,10 @@ Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque, id pulvinar
 
 Blocks of code are either fenced by `lines with three back-ticks`, or are indented with four spaces.
 
-```
-<!-- Some example CSS code -->
+```css
+/* Some example CSS code */
 body {
-  color:red;
+  color: red;
 }
 ```
 
