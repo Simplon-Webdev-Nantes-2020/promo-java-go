@@ -46,35 +46,6 @@
                 "url": "/blog",
                 "style": "link",
                 "has_subnav": false
-            },
-            {
-                "label": "Welcome",
-                "url": "#",
-                "style": "link",
-                "has_subnav": true,
-                "subnav_links": [
-                    {
-                        "label": "Libris",
-                        "url": "/docs/welcome",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Overview",
-                        "url": "/overview",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Showcase",
-                        "url": "/showcase",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Style Guide",
-                        "url": "/style-guide",
-                        "style": "link",
-                        "has_subnav": false
-                    }
-                ]
             }
         ],
         "url": ""

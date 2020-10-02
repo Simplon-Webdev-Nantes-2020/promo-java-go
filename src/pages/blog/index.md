@@ -1,6 +1,6 @@
 ---
 title: Blog
-subtitle: This is an optional subtitle for the blog page
-image: images/5.jpg
+subtitle: La veille technologique
+image: images/blog.jpg
 template: blog
 ---
