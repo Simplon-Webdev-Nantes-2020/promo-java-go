@@ -1,9 +1,8 @@
 import React from 'react';
-import _ from 'lodash';
 import { Link } from "gatsby"
 import {graphql} from 'gatsby';
 
-import components, {Layout} from '../components/index';
+import {Layout} from '../components/index';
 
 export const query = graphql`
   query($url: String) {
