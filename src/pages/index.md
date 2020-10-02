@@ -4,7 +4,7 @@ sections:
   - section_id: JavaWeb
     type: section_hero
     title: Java promo 1- Nantes Simplon Grand Ouest
-    image: images/computer-1873831_1920.png
+    image: images/computer.jpg
     content: >-
       Formation préparant au titre Développeur web et Web mobile (RNCP31114 niv
       5)
@@ -30,31 +30,26 @@ sections:
     type: section_grid
     col_number: three
     grid_items:
-      - title: Documentation
+      - title: Pédagogie
         content: >-
-          Donec lobortis velit sed suscipit lobortis. Ut non quam metus. Nullam
-          a maximus mi. Quisque justo nunc, sollicitudin euismod euismod at,
-          tincidunt ut tellus. Vivamus rhoncus mattis varius.
+          Une pédagogie active basée sur les projets grâce à sa plateforme Simplonline
         actions:
-          - label: Get Started
-            url: /docs
+          - label: En savoir plus
+            url: https://simplon.co/blog/actualites/simplonline-ou-comment-utiliser-le-digital-dans-l-acquisition-des-competences-professionnelles.html
             style: link
       - title: Blog
         content: >-
-          Vestibulum a nunc ut eros condimentum posuere. Nullam dapibus quis
-          nunc non interdum. Pellentesque tortor ligula, gravida ac commodo eu.
+          Un Blog écrit par les apprenants, à partir de la veille technologique effectuée au cours de la formation.
         actions:
-          - label: View Posts
+          - label: Voir les articles
             url: /blog
             style: link
-      - title: Style Guides
+      - title: Github
         content: >-
-          Donec lobortis velit sed suscipit lobortis. Ut non quam metus. Nullam
-          a maximus mi. Quisque justo nunc, sollicitudin euismod euismod at,
-          tincidunt ut tellus. Vivamus rhoncus mattis varius.
+          Un repository Github contenant les projets donnés aux apprenants
         actions:
-          - label: Learn More
-            url: /style-guide
+          - label: Visitez le Github
+            url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
             style: link
 template: advanced
 ---
