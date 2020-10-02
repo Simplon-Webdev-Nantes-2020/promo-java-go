@@ -26,6 +26,12 @@ sections:
         icon_class: lorem-ipsum
         new_window: false
         type: action
+      - label: Git
+        url: /docs/git
+        style: primary
+        icon_class: lorem-ipsum
+        new_window: false
+        type: action
   - section_id: features
     type: section_grid
     col_number: three

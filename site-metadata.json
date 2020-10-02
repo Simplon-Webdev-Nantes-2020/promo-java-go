@@ -33,6 +33,11 @@
                         "label": "Java",
                         "url": "/docs/java",
                         "style": "link"
+                    },
+                    {
+                        "label": "Git",
+                        "url": "/docs/git",
+                        "style": "link"
                     }
                 ]
             },
