@@ -41,7 +41,10 @@ export default class Blog extends React.Component {
                     )}
                     <header className="post-header">
                       <div className="post-meta">
-                        <time className="published" dateTime={moment(_.get(post, 'frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                        <div className="published">
+                          <text>{_.get(post, 'frontmatter.author', null)}, </text>
+                          <time dateTime={moment(_.get(post, 'frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                        </div>
                       </div>
                       <h2 className="post-title line-left"><Link to={withPrefix(_.get(post, 'url', null))} rel="bookmark">{_.get(post, 'frontmatter.title', null)}</Link></h2>
                     </header>
