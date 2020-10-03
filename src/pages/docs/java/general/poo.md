@@ -1,6 +1,6 @@
 ---
 title: La POO
-weight: 3
+weight: 8
 template: docs
 doc_sections: java
 ---
@@ -8,8 +8,19 @@ doc_sections: java
 ## Concept
 
 Dans cette partie, nous allons aborder les concepts de base de la programmation orientée objet, à savoir les **classes**, les **attributs** et les **méthodes**.  
-En effet, en plus des librairies java de base qui contiennent beaucoup de classes (pour représenter des listes, des fichiers, des images, ...), on peut se construire ses propres classes. Une classe est composée d'attributs et de méthodes, elle sert à fabriquer des objets.  
-Par exemple si je travaille sur des mails, il est plus simple de créer une classe mail qui regroupe toutes les variables de chaque mail :
+En effet, en plus des librairies java de base qui contiennent beaucoup de classes (pour représenter des listes, des fichiers, des images, ...), on peut se construire ses propres classes.
+Une classe est composée d'attributs et de méthodes, elle sert à fabriquer des objets.  
+Une classe permet de créer des objets (ou instances).
+La classe est comme un moule qui permet de fabriquer toujours les mêmes sortes d'objet.  
+Le mot clé `this` à l'intérieur de la classe permet de désigner l'instance sur laquelle on travaille.  
+Par exemple si je travaille sur des mails, il est plus simple de créer une classe mail qui regroupe toutes les variables de chaque mail.
+Ainsi mail1 et mail2 sont des **instances** de la **classe** Mail.  
+
+> Note : dans cet article, nous ne faisons qu'une initiation à l'objet. Cette notion sera revue en profondeur ultérieurement.
+
+## Utilité
+
+Imaginons un monde Java sans objet. Voici le code que nous devrions écrire pour déclarer 2 mails :
 
 ```java
 String objet1 = "ton compte";
@@ -21,14 +32,29 @@ String destinataire2 = "pipou@yopmail.com";
 String message2 = "Salut, ça va?";
 ```
 
-Version avec une **classe** Mail :
+Et voici une version avec une **classe** Mail :
 
 ```java
 Mail mail1 = new Mail("ton compte", "toto@yopmail.com", "bonjour, votre compte a été désactivé. Au revoir.");
 Mail mail2 = new Mail("salut","pipou@yopmail.com","Salut, ça va?");
 ```
 
+## Les attributs
+
+Les attributs sont des variables propres à l'objet. C'est ce qui le décrit.  
 Voici comment définir la classe Mail :
+
+```java
+public class Mail {
+  String message; // les attributs de la classe, ici il y en a 3
+  String destinataire;
+  String sujet;
+}
+```
+
+## Le constructeur
+
+Le constructeur définit comment instancier un nouvel objet :
 
 ```java
 public class Mail {
@@ -42,21 +68,14 @@ public class Mail {
     this.destinataire = monDestinataire;
     this.sujet = monSujet;
   }
-
-  public static void main(String[] args) {
-
-  }
 }
 ```
 
-Une classe permet de créer des objets (ou instances). Ainsi mail1 et mail2 sont des **instances** de la **classe** Mail.  
-La classe est comme un moule qui permet de fabriquer toujours les même sortes d'objet.  
-Le mot clé `this` à l'intérieur de la classe permet de désigner l'instance sur laquelle on travaille.
+## Les méthodes
 
-## Méthodes
-
-Une classe permet aussi de définir des méthodes (le main et le constructeur sont des méthodes).
+Une classe permet aussi de définir des méthodes.
 Les méthodes sont des actions que l'on peut effectuer sur des objets.  
+Les méthodes peuvent être aussi l'état de l'objet : `maVoiture.isRed()`.  
 Une méthode possède une portée (public, private, protected), un nom, un type de retour (ou void si elle ne donne aucun résultat) et des paramètres.
 
 ```java
