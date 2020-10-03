@@ -58,7 +58,7 @@ Pour la suite de ce tutoriel, en plus d'Eclipse et Mysql que nous avons déjà i
 STS est un plugin Eclipse qui ajoute une perspective dédiée à la création et la gestion d'application SpringBoot. 
 Pour l'installer, rendez-vous sur le marketplace et rechercher STS et suivez les instructions.
 
-![STS in Eclipse MarketPlace](sts-marketplace.png)
+![STS in Eclipse MarketPlace](sts-marketplace.jpg)
 
 ## A la découverte de SpringBoot
 
@@ -72,11 +72,11 @@ Dans la perspective Spring, créer un nouveau projet SpringBoot en passant par N
 
 Dans la fenêtre de création qui s'affiche, renseignez les informations de votre projet en veillant à conserver comme Service URL "http://start.spring.io", comme type "Maven" et Java Version "8" et cliquez sur Next.
 
-![Create Spring Project 1](new-spring-project-1.png)
+![Create Spring Project 1](new-spring-project-1.jpg)
 
 Ensuite, sélectionnez Spring Boot Version "1.5.10.BUILD-SNAPSHOT" (Attention : les versions 1.5.9 et 2.0.0 génèrent des erreurs par la suite) et ajouter "Web" dans les dépendances du projet. Cliquez sur Finish.
 
-![Create Spring Project 2](new-spring-project-2.png)
+![Create Spring Project 2](new-spring-project-2.jpg)
 
 Félicitation, votre projet SpringBoot est créé.
 
@@ -166,7 +166,7 @@ et d'autres informations qu'il est plus rare d'avoir à configurer.
 </dependencies>
 ```
 
-C'est gràce à ce fichier que le projet java sera configuré et que l'ensemble des librairies utiles seront téléchargées et intégrées au projet Java.
+C'est grâce à ce fichier que le projet java sera configuré et que l'ensemble des librairies utiles seront téléchargées et intégrées au projet Java.
 
 ##### application.properties
 
