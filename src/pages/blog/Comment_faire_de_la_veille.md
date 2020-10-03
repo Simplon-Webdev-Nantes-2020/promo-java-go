@@ -4,6 +4,7 @@ excerpt: >-
  Le monde informatique est un vaste domaine. On est vite perdu.  
  Le premier des reflexes est de faire des recherches sur le Web en utilisant un moteur de recherche. On peut aussi s'abonner à un fux RSS, à une newsLetter, acheter des revues.  
  Mais en tout premier, il faut savoir ce que l'on recherche.
+author: Manu
 date: '2020-10-02'
 image: images/blog/Comment_faire_de_la_veille.jpg
 template: post
