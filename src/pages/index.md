@@ -36,21 +36,21 @@ sections:
     type: section_grid
     col_number: three
     grid_items:
-      - title: Pédagogie
+      - title: Une approche par projet
         content: >-
           Une pédagogie active basée sur les projets grâce à sa plateforme Simplonline
         actions:
           - label: En savoir plus
             url: https://simplon.co/blog/actualites/simplonline-ou-comment-utiliser-le-digital-dans-l-acquisition-des-competences-professionnelles.html
             style: link
-      - title: Blog
+      - title: Un blog
         content: >-
-          Un Blog écrit par les apprenants, à partir de la veille technologique effectuée au cours de la formation.
+          Un Blog écrit par les apprenants, alimenté par leurs lectures : eco-système, technologie, environnement de travail, bien-être, etc...
         actions:
           - label: Voir les articles
             url: /blog
             style: link
-      - title: Github
+      - title: Un Github
         content: >-
           Un repository Github contenant les projets donnés aux apprenants
         actions:
