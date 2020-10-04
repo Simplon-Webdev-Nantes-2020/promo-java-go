@@ -94,3 +94,27 @@ else {// dans tous les autres cas
 ```
 
 Une erreur classique est d'utiliser un **or** lorsqu'il faudrait un **and** ou inversement. Ici par exemple, un age qui est inférieur à 18 **et** supérieur à 65 n'existe pas, il fallait bien utiliser **ou**.
+
+### Condition multiple (switch)
+
+Lorsque l'on écrit plusieurs if à la suite, on peut simplifier l'écriture par un switch.
+Le break permet de quitter le switch.
+
+```java
+int note = 10; //On imagine que la note maximale est 20
+
+switch (note)
+{
+  case 0:
+    System.out.println("Ouch !");
+    break;
+  case 10:
+    System.out.println("Vous avez juste la moyenne.");
+    break;
+  case 20:
+    System.out.println("Parfait !");
+    break;
+  default:
+    System.out.println("Il faut davantage travailler.");
+}
+```
