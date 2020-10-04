@@ -153,3 +153,46 @@ public static void testTableau() {
     }
 }
 ```
+
+## L'ArrayList
+
+Il s'agit de tableaux dynamiques, c'est à dire d'un array sans limite de capacité.  
+Son nom de code : `ArrayList`. On va l'utiliser lorsque l'on ne connaît pas la capacité du tableau.  
+Voici un exemple d'utilisation :
+
+``` java
+public static void testListe () {
+    ArrayList<String> listePersonne = new ArrayList<>();
+    ArrayList<String> listeHomme = new ArrayList<>();
+    ArrayList<String> listeFemme = new ArrayList<>();
+
+    //constitution liste de femmes
+    listeFemme.add("Marie");
+    listeFemme.add("Anne");
+    afficherListe("Femme",listeFemme);
+
+    //constitution liste d'hommes
+    listeHomme.add("Jean");
+    listeHomme.add("Paul");
+    listeHomme.add("Pierre");
+    afficherListe("Homme",listeHomme);
+
+    //fusion des 2 listes
+    listePersonne.addAll(listeHomme);
+    listePersonne.addAll(listeFemme);
+
+    //supression d'un élément
+    listePersonne.remove("Jean");
+
+    //liste finale
+    afficherListe("Tous",listePersonne);
+}
+
+private static void  afficherListe(String nomListe, List<String> liste) {
+    int i = 0;
+    System.out.println("\nListe " + nomListe + " : " + liste.size() + " individus");
+    for (String personne : liste) {
+        System.out.format("élément %2d %s \n", ++i, personne);
+    }
+}
+```
