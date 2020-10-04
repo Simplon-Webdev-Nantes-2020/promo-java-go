@@ -5,6 +5,7 @@ excerpt: >-
 author: Manu
 date: '2020-10-03'
 image: images/blog/Bien_poser_une question.jpg
+thumb_image: images/blog/Bien_poser_une question.jpg
 template: post
 ---
 
