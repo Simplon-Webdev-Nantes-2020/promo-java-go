@@ -1,8 +1,10 @@
 {
+    "title": "promo Java Simplon GO",
+    "siteUrl": "http://",
     "description": "Documentation pour une formation développeur Web et web mobile - Java et React",
     "header": {
         "title": "Promo 1 - Java - GO",
-        "logo_img": "images/simplon.png",
+        "logo_img": "images/simplon.jpg",
         "has_nav": true,
         "nav_links": [
             {
@@ -31,6 +33,11 @@
                         "label": "Java",
                         "url": "/docs/java",
                         "style": "link"
+                    },
+                    {
+                        "label": "Git",
+                        "url": "/docs/git",
+                        "style": "link"
                     }
                 ]
             },
@@ -39,35 +46,6 @@
                 "url": "/blog",
                 "style": "link",
                 "has_subnav": false
-            },
-            {
-                "label": "Welcome",
-                "url": "#",
-                "style": "link",
-                "has_subnav": true,
-                "subnav_links": [
-                    {
-                        "label": "Libris",
-                        "url": "/docs/welcome",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Overview",
-                        "url": "/overview",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Showcase",
-                        "url": "/showcase",
-                        "style": "link"
-                    },
-                    {
-                        "label": "Style Guide",
-                        "url": "/style-guide",
-                        "style": "link",
-                        "has_subnav": false
-                    }
-                ]
             }
         ],
         "url": ""
@@ -106,6 +84,5 @@
                 "new_window": true
             }
         ]
-    },
-    "title": "Java Spring React support"
+    }
 }

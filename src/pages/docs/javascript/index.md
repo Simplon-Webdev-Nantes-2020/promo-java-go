@@ -4,4 +4,4 @@ template: docs
 doc_sections: javascript
 ---
 
-Vous trouverez la doc pour Javascript
+Vous trouverez la doc pour Javascript.

@@ -27,7 +27,10 @@ export default class Post extends React.Component {
                   )}
                   <div className="inner-sm">
                     <div className="post-meta">
-                      <time className="published" dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                      <div className="published" >
+                        <text>{_.get(this.props, 'pageContext.frontmatter.author', null)}, </text>
+                        <time dateTime={moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(this.props, 'pageContext.frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                      </div>
                     </div>
                     <h1 className="post-title">{_.get(this.props, 'pageContext.frontmatter.title', null)}</h1>
                     {_.get(this.props, 'pageContext.frontmatter.subtitle', null) && (

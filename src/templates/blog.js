@@ -41,13 +41,16 @@ export default class Blog extends React.Component {
                     )}
                     <header className="post-header">
                       <div className="post-meta">
-                        <time className="published" dateTime={moment(_.get(post, 'frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                        <div className="published">
+                          <text>{_.get(post, 'frontmatter.author', null)}, </text>
+                          <time dateTime={moment(_.get(post, 'frontmatter.date', null)).strftime('%Y-%m-%d %H:%M')}>{moment(_.get(post, 'frontmatter.date', null)).strftime('%B %d, %Y')}</time>
+                        </div>
                       </div>
                       <h2 className="post-title line-left"><Link to={withPrefix(_.get(post, 'url', null))} rel="bookmark">{_.get(post, 'frontmatter.title', null)}</Link></h2>
                     </header>
                     {_.get(post, 'frontmatter.excerpt', null) && (<React.Fragment>
                     <p className="post-excerpt">{_.get(post, 'frontmatter.excerpt', null)}</p>
-                    <p className="read-more"><Link to={withPrefix(_.get(post, 'url', null))} className="read-more-link">Read More</Link></p>
+                    <p className="read-more"><Link to={withPrefix(_.get(post, 'url', null))} className="read-more-link">Lire l'article</Link></p>
                     </React.Fragment>)}
                   </article>
                 ))}
