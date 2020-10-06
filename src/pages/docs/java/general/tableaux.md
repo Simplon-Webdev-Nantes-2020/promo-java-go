@@ -115,7 +115,7 @@ public static void testListe () {
     listePersonne.addAll(listeHomme);
     listePersonne.addAll(listeFemme);
 
-    //supression d'un élément
+    //suppression d'un élément
     listePersonne.remove("Jean");
 
     //liste finale
