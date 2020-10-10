@@ -15,6 +15,7 @@ java:
   root_docs_path: /docs/java
   sections:
     - general
+    - poo
     - spring
 html:
   root_docs_path: /docs/html
