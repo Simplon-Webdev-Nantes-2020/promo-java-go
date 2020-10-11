@@ -8,7 +8,7 @@ doc_sections: java
 La programmation est une automatisation de tâches pour résoudre un problème humain.  
 Un paradigme est une façon de voir les choses, c'est un modèle.
 Il existe plusieurs façons de traiter les solutions. On appelle cela un paradigme de programmation.  
-Dans les nombreux paradigmes, on peut en ressortir trois :
+Parmi les nombreux paradigmes, on peut en extraire trois :
 
 * la programmation procédurale
 * la Programmation Orientée Objet (POO).
@@ -29,7 +29,7 @@ Dans la programmation procédurale, vous avez les notions suivantes :
 Les variables stockent les données. Les instructions sont les traitements sur les données.
 Ces traitements sont conditionnés, ou répétitifs.
 S'il sont appellés plusieurs fois, nous les regroupons dans une fonction, ce qui évite la duplication de code.  
-En programmation procédurale place en son centre les données et leur état à un instant t.
+La programmation procédurale place en son centre les données et leur état à un instant t.
 
 ### La programmation objet
 
@@ -42,19 +42,7 @@ Lorsque que l'on va coder en objet, on va d'abord faire abstraction de la machin
 
 ### la programmation fonctionnelle
 
-La programmation objet est basé sur l'état à un instant t.
-Or cet état évolue avec le temps et donc le résultat évolue en fonction de cet état.
-Ceci peut entraîner des effets de bords et des bugs. Il est aussi plus difficile de tester un état changeant.  
-La programmation fonctionnelle aborde le traitement différemment.
-D'abord réservée aux matheux, elle est de plus en plus présente pour résoudre des problèmes liés aux événements, en particulier les interfaces utilisateurs.  
-
-Elle est centrée sur la fonction (et non sur la donnée). Elle est basée sur 4 grands principes :
-
-* La fonction pure : sa seule fonction est de prendre des données en entrée et retourner un résultat.
-Quel que soit le moment, le résultat reste identique pour des arguments (paramètres d'entrée) identiques.
-* L'immutabilité : on ne change pas l'état d'un paramètre. Si on passe un objet en paramètre, ce dernier est identique à la fin de la fonction
-* L'expressivité : utilisation de fonction d'ordre supérieur, c'est à dire mettre une fonction en paramètre
-* composabilité : empilement successif d'appel de fonctions pour donner un unique résultat
-
-Vous aurez des exemples dans cet [article](https://blog.ippon.fr/2013/01/24/introduction-a-la-programmation-fonctionnelle/).  
-En Java, on utilisera peu la programmation fonctionnelle car elle sépare la donnée du traitement.
+La programmation objet est basé sur l'état à un instant t, or cet état évolue avec le temps.  
+C'est donc naturellement dans la gestion des flux et des événements que la programmation fonctionnelles sera utilisée.  
+Elle est basée sur le fait qu'un traitement donnera toujours le même résultat quelque soit son environnement extérieur, et ne modifiera pas cet environnement.  
+Un chapitre sera consacré à ce paradigme.
