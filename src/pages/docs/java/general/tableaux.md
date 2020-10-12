@@ -122,7 +122,7 @@ public static void testListe () {
     afficherListe("Tous",listePersonne);
 }
 
-private static void  afficherListe(String nomListe, List<String> liste) {
+private static void  afficherListe(String nomListe, ArrayList<String> liste) {
     int i = 0;
     System.out.println("\nListe " + nomListe + " : " + liste.size() + " individus");
     for (String personne : liste) {
