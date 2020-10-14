@@ -45,7 +45,7 @@ Une méthode renvoie un résultat typé. Si la méthode renvoie `void`, cela sig
 ``` java
 class Animal {
     String nom;
-    int race;
+    String race;
     int nombreDePattes;
 
     void exprimerSaJoie() {
