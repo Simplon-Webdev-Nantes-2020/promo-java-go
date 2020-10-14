@@ -19,7 +19,7 @@ Une classe est identifiée par le mot réservé `class`, son nom, et son body co
 Voici un exemple de déclaration de la classe `Voiture` par le mot clef `class`.
 
 ``` java
-class Voiture {
+class Animal {
 }
 ```
 
@@ -30,10 +30,10 @@ On déclare les propriétés en début de classe. Il s'agit de variables propre 
 Nous ajoutons trois caractéristiques à la classe `Voiture` :
 
 ``` java
-class Voiture {
-    String marque;
-    int nombreDePlaces;
-    int essenceEnReserve;
+class Animal {
+    String nom;
+    int race;
+    int nombreDePattes;
 }
 ```
 
@@ -43,14 +43,16 @@ Les méthodes correspondent aux comportements. C'est l'équivalent des fonctions
 Une méthode renvoie un résultat typé. Si la méthode renvoie `void`, cela signifie qu'il n'y a pas de résultat.
 
 ``` java
-class Voiture {
-    String marque;
-    int nombreDePlaces;
-    int essenceEnReserve;
+class Animal {
+    String nom;
+    int race;
+    int nombreDePattes;
 
-    void alerterNiveauEssence() {
-        if (essenceEnReserve < 5)
-            System.out.println("Trouver une station au plus vite");
+    void exprimerSaJoie() {
+        if (race ="chien")
+            System.out.println("Ouaf Ouaf");
+        if (race ="chat")
+            System.out.println("Miaou");
     }
 }
 ```
@@ -59,7 +61,7 @@ class Voiture {
 
 Il ne faut pas confondre classe et objet.  
 Une classe est à la fois une description et un conteneur.  
-Un objet est une entité. On appelle cela une instance. 
+Un objet est une entité. On appelle cela une instance.  
 Un objet appartient forcément à une classe.  
 
 Imaginons créer un logiciel de location de voitures, nous devons décrire une voiture.
@@ -108,16 +110,17 @@ La déclaration du constructeur n'est pas obligatoire.
 Voici le constructeur
 
 ``` Java
-public Animal(String nom, int nombreDePatte) {
+public Animal(String nom, String race, int nombreDePattes) {
     this.nom = nom;
-    this.nombreDePatte = nombreDePatte;
+    this.race = race;
+    this.nombreDePattes = nombreDePattes;
 }
 ```
 
 Et l'instanciation de l'objet
 
 ``` Java
-Animal titi = new Animal("titi", 2);
+Animal titi = new Animal("titi", "oiseau", 2);
 ```
 
 ### Le destructeur
@@ -150,12 +153,14 @@ public class Animal {
 
     // propriétés de l'objet
     String nom;
-    int nombreDePatte;
+    String race;
+    int nombreDePattes;
 
     // constructeur
-    public Animal(String nom, int nombreDePatte) {
+    public Animal(String nom, String race, int nombreDePatte) {
         this.nom = nom;
-        this.nombreDePatte = nombreDePatte;
+        this.race = race;
+        this.nombreDePattes = nombreDePattes;
         totalAnimal++;
     }
 
@@ -167,7 +172,7 @@ public class Animal {
     // une methode de l'objet
     void parler() {
         System.out.println(this.formulerMonNom()); // appel d'une méthode de l'objet
-        System.out.println("Je suis un animal et j'ai " + this.nombreDePatte + " pattes");
+        System.out.println("Je suis un animal et j'ai " + this.nombreDePattes + " pattes");
     }
 
     // une methode de la classe
@@ -177,10 +182,10 @@ public class Animal {
     }
 
     public static void main(String[] args) {
-        Animal animalTiti = new Animal("titi", 2); // creation animal
+        Animal animalTiti = new Animal("titi", "oiseau", 2); // creation animal
         animalTiti.parler(); // appel d'une méthode d'instance
 
-        Animal animalMinet = new Animal("Gros minet", 4); // creation animal
+        Animal animalMinet = new Animal("Gros minet", "chat", 4); // creation animal
         animalMinet.parler(); // appel d'une méthode d'instance
 
         Animal.afficherNombreDAnimaux(); // appel d'une méthode de classe
