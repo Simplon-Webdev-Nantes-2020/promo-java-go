@@ -32,7 +32,7 @@ Nous ajoutons trois caractéristiques à la classe `Voiture` :
 ``` java
 class Animal {
     String nom;
-    int race;
+    String race;
     int nombreDePattes;
 }
 ```
