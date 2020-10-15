@@ -1,7 +1,7 @@
 {
     "title": "promo Java Simplon GO",
     "siteUrl": "http://",
-    "description": "Documentation pour une formation développeur Web et web mobile - Java et React",
+    "description": "Simplon Grand Ouest - formation développeur Web et web mobile - Java/js",
     "header": {
         "title": "Promo 1 - Java - GO",
         "logo_img": "images/simplon.jpg",
@@ -25,18 +25,23 @@
                         "style": "link"
                     },
                     {
-                        "label": "JavaScript / TypeScript",
-                        "url": "/docs/javascript",
-                        "style": "link"
-                    },
-                    {
                         "label": "Java",
                         "url": "/docs/java",
                         "style": "link"
                     },
                     {
-                        "label": "Git",
-                        "url": "/docs/git",
+                        "label": "Framework Spring",
+                        "url": "/docs/spring",
+                        "style": "link"
+                    },
+                    {
+                        "label": "Environnement de développement",
+                        "url": "/docs/env",
+                        "style": "link"
+                    },
+                    {
+                        "label": "Conception",
+                        "url": "/docs/conception",
                         "style": "link"
                     }
                 ]
@@ -54,8 +59,8 @@
         "content": "Support de formation Java Web",
         "links": [
             {
-                "label": "Simplon.co",
-                "url": "https://www.simplon.co",
+                "label": "Simplon Grand Ouest",
+                "url": "https://grandouest.simplon.co/",
                 "style": "link",
                 "new_window": true
             }
@@ -64,21 +69,21 @@
         "social_links": [
             {
                 "label": "Twitter",
-                "url": "https://twitter.com/",
+                "url": "https://twitter.com/simplongdo",
                 "style": "icon",
                 "icon_class": "fa-twitter",
                 "new_window": true
             },
             {
                 "label": "LinkedIn",
-                "url": "https://www.linkedin.com/",
+                "url": "https://fr.linkedin.com/school/simplon-grand-ouest/",
                 "style": "icon",
                 "icon_class": "fa-linkedin",
                 "new_window": true
             },
             {
                 "label": "GitHub",
-                "url": "https://github.com/",
+                "url": "https://github.com/Simplon-Webdev-Nantes-2020",
                 "style": "icon",
                 "icon_class": "fa-github",
                 "new_window": true

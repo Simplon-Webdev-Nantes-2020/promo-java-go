@@ -14,20 +14,26 @@ sections:
       - label: Java
         url: /docs/java
         style: primary
-      - label: HTML CSS
+      - label: HTML CSS JS
         url: /docs/html
         style: primary
         icon_class: lorem-ipsum
         new_window: false
         type: action
-      - label: Javascript
-        url: /docs/javascript
+      - label: Spring
+        url: /docs/spring
         style: primary
         icon_class: lorem-ipsum
         new_window: false
         type: action
-      - label: Git
-        url: /docs/git
+      - label: Environnement
+        url: /docs/env
+        style: primary
+        icon_class: lorem-ipsum
+        new_window: false
+        type: action
+      - label: Conception
+        url: /docs/conception
         style: primary
         icon_class: lorem-ipsum
         new_window: false

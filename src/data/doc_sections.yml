@@ -1,26 +1,25 @@
 root_docs_path: /docs
 sections:
-  - welcome
   - java
-welcome:
-  root_docs_path: /docs/welcome
-  sections:
-    - getting-started
-    - ui-components
-    - manage-content
-    - tools
-    - faq
-    - community
+  - html
+  - spring
+  - env
+  - conception
 java:
   root_docs_path: /docs/java
   sections:
     - general
     - poo
-    - spring
 html:
   root_docs_path: /docs/html
   sections:
-javascript:
-  root_docs_path: /docs/javascript
+spring:
+  root_docs_path: /docs/spring
   sections:
-    - typescript
+    - spring_boot
+env:
+  root_docs_path: /docs/env
+  sections:
+conception:
+  root_docs_path: /docs/conception
+  sections:

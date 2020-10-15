@@ -1,10 +1,7 @@
 ---
-title: Spring
-excerpt: >-
-  In this section you'll learn how to add syntax highlighting, examples,
-  callouts and much more.
+title: Spring boot
 template: docs
-doc_sections: java
+doc_sections: spring
 ---
 
 ## Spring boot
