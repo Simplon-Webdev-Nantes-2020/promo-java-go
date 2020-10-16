@@ -90,7 +90,7 @@ un calendrier avec des relations :
 
 Un babysitter possède des compétences et met ces disponibilités dans le calendrier.  
 
-![babysitter](img_baby/babysitter.png)
+![babysitter](img_baby/baby_sitter.png)
 
 * Le baby-sitter a plusieurs compétences
 * Il construit un planning où il donne ses disponibilités
@@ -98,6 +98,6 @@ Un babysitter possède des compétences et met ces disponibilités dans le calen
 
 ### Le schéma final
 
-![solution](img_baby/babysitting.png)
+![solution](img_baby/baby_sitting.png)
   
 * Nous avons ajouté une relation entre le parent les compétences car les compétences recherchées par les parents sont des données persistantes (le parent ne ressaisit pas à chaque requête les compétences qu'il désire.)  
