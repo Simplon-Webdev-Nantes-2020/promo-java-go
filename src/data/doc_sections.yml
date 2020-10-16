@@ -23,3 +23,6 @@ env:
 conception:
   root_docs_path: /docs/conception
   sections:
+    - moo
+    - code
+    - sgbd
