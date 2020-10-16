@@ -1,6 +1,6 @@
 ---
 title: Les EDIs
-weight: 1
+weight: 2
 template: docs
 doc_sections: env
 ---
@@ -36,3 +36,7 @@ Note : Ne pas installer SonarLint dans un premier temps.
 ## Eclipse
 
 Pour télécharger Eclipse, allez sur ce [lien](https://www.eclipse.org/downloads/)
+
+## IntelliJ IDEA
+
+Sur le site de [Jetbrains](https://www.jetbrains.com/fr-fr/idea/download/#section=windows).
