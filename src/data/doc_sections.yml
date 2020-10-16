@@ -20,6 +20,10 @@ spring:
 env:
   root_docs_path: /docs/env
   sections:
+    - coder
+    - git
+    - serveurs
+    - divers
 conception:
   root_docs_path: /docs/conception
   sections:
