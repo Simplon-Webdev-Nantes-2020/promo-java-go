@@ -10,6 +10,7 @@ java:
   sections:
     - general
     - poo
+    - coder
 html:
   root_docs_path: /docs/html
   sections:
