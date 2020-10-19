@@ -5,8 +5,11 @@ template: docs
 doc_sections: conception
 ---
 
+Nous allons définir une salle de classe, composée d'un enseignant et d'étudiants.
+
 ## Classe
 
+Un professeur ou un étudiant est une personne qui porte un nom et un prénom.  
 La classe est l'entité que l'on va décrire.  
 On définit le nom, les propriétés et les méthodes. En UML, on parle de nom, attribut et opération.
 ![Classe](img_moo/classe.png)  
@@ -19,6 +22,7 @@ On définit le nom, les propriétés et les méthodes. En UML, on parle de nom, 
 
 ## Héritage
 
+L'étudiant est une personne qui a des spécificités.  
 L'héritage consiste à regrouper dans une classe toutes les attributs et opérations communs à plusieurs classes. On parle aussi de généralisation.  
 ![Héritage](img_moo/heritage.png)
 
@@ -137,8 +141,15 @@ Une matière est composée de plusieurs cours. Si la matière disparaît, le cou
 ## Schéma global
 
 ![Cours](img_moo/enseignement.png)
-
 Un exemple de modélisation d'un enseignement.  
+Ce qu'il faut lire :
+
+* un professeur est une personne.
+* un étudiant est une personne et possède une adresse.
+* un professeur enseigne plusieurs dans plusieurs cours.
+* un étudiant participe à plusieurs cours en étant participant
+* un cours se passe dans une salle
+* un cours contient plusieurs participants.
 
 ## ce qu'il faut savoir
 
