@@ -23,6 +23,7 @@ Pour télécharger VS Code, allez sur ce [site](https://code.visualstudio.com/do
 
 * Java Extension Pack
 * Java IDE
+* Java Code Generators
 
 Note : Ne pas installer SonarLint dans un premier temps.
 
