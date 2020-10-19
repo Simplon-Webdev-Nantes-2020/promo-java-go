@@ -7,7 +7,7 @@ doc_sections: conception
 
 Pour concevoir un schéma UML, il existe plusieurs produits sur le marché comme PowerAMC, Bouml, StarUml, Bouml, Dia, Lucid.  
 Mis à part PowerAMC, aucun outil ne satisfera totalement la demande. Cependant powerAMC est réservé aux sociétés ayant de gros moyens financiers.  
-Si vous souhaitez un logiciel graphique simple, utilisez Lucid ou Dia,
+Si vous souhaitez un logiciel graphique simple, utilisez Lucid, Dia, ou UMLet,
 Si vous souhaitez utiliser les fonctionnalités avancées de l'UML, utilisez StarUML ou Bouml.
 
 ### StarUML
@@ -34,6 +34,12 @@ Il reste suffisant pour dessiner des classes.
 [lucidchart](https://www.lucidchart.com/pages/fr) est un logiciel en ligne payant. Il a cependant tout une partie gratuite qui est suffisante pour la formation.
 Sa simplicité de saisie et son export en image sont ses 2 grands atouts.  
 C'est ce logiciel qui est utilisé dans le tuto.
+
+### UMLet
+
+Dessin de diagramme UML. Un mix entre conception visuel et description textuelle.  
+Il permet de faire tous les diagrammes nécessaires et entièrement gratuit.  
+Existe sur VS Code, Eclipse.
 
 ### Le papier et le crayon
 
