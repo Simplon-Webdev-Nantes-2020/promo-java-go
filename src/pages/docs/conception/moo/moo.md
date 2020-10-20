@@ -124,14 +124,14 @@ Une relation \* \* sera remplacée par 2 relations 1 *, si cette relation justif
 
 ## Agrégation
 
-C'est une relation 1 * qui a une notion de subordination
+C'est une relation qui a une notion de subordination
 
 ![Agrégation](img_moo/agregation.png)  
 Une voiture possède un moteur. Si on détruit la voiture, le moteur peut être ré-utiliser.  
 
 ## Composition
 
-C'est une relation 1 * qui a une notion d'appartenance.  
+C'est une relation qui a une notion d'appartenance.  
 C'est une aggrégation qui a un lien plus poussé.  
 Une instance de la classe B ne peut exister sans la présence d'une instance de la classe A.
 
@@ -148,6 +148,7 @@ Ce qu'il faut lire :
 * un étudiant est une personne et possède une adresse.
 * un professeur enseigne plusieurs dans plusieurs cours.
 * un étudiant participe à plusieurs cours en étant participant
+* Si un étudiant est supprimé, le participant aussi
 * un cours se passe dans une salle
 * un cours contient plusieurs participants.
 
