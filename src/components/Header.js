@@ -5,6 +5,9 @@ import {Link, withPrefix, classNames} from '../utils';
 import ActionLink from './ActionLink';
 import Submenu from './Submenu';
 
+import Search from "./search"
+const searchIndices = [{ name: `Pages`, title: `Pages` }]
+
 export default class Header extends React.Component {
     render() {
         return (
@@ -17,6 +20,9 @@ export default class Header extends React.Component {
                     ) : 
                     <p className="site-title"><Link to={withPrefix(_.get(this.props, 'pageContext.site.siteMetadata.header.url', null) || '/')}>{_.get(this.props, 'pageContext.site.siteMetadata.header.title', null)}</Link></p>
                     }
+                  </div>
+                  <div  id="main-search" className="site-search" aria-label="Main Search">
+                    <Search indices={searchIndices} />
                   </div>
                   {_.get(this.props, 'pageContext.site.siteMetadata.header.has_nav', null) && (<React.Fragment>
                   <nav id="main-navigation" className="site-navigation" aria-label="Main Navigation">
