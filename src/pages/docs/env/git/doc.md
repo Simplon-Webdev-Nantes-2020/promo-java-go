@@ -6,6 +6,7 @@ doc_sections: env
 ---
 
 * Pleins de références : [try.github](https://try.github.io/)
+* Un bon tutoriel, très visuel et bien expliqué : [Atlassian](https://www.atlassian.com/fr/git/tutorials)
 * La bible : [git-scm](https://git-scm.com/)
 * Ca porte son nom : [ohshitgit](https://ohshitgit.com/)
 * Une référence visuelle : [visual-git-guide](https://marklodato.github.io/visual-git-guide/index-fr.html)
