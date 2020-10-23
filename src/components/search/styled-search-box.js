@@ -26,7 +26,6 @@ export default styled(SearchBox)`
   .SearchInput {
     outline: none;
     border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
-    font-size: 1em;
     transition: 100ms;
     border-radius: 2px;
     color: ${({ theme }) => theme.foreground};

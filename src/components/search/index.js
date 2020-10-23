@@ -11,6 +11,10 @@ const theme = {
   foreground: "#050505",
   background: "white",
   faded: "#888",
+  highlighted : {
+    color: "#D10033",
+    background: "#e3e4e6",
+  }
 }
 
 export default function Search({ indices }) {

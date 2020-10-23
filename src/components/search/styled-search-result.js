@@ -33,9 +33,18 @@ export default styled(SearchResult)`
       margin-left: 0;
     }
 
+    mark.ais-Snippet-highlighted{
+        background: ${({ theme }) => theme.highlighted.background};
+        color: ${({ theme }) => theme.highlighted.color};
+        font-weight: bold;
+    }
+
+    span.ais-Highlight-nonHighlighted{
+        font-size: 1.25rem;
+    }
+
     li.ais-Hits-item {
       margin-bottom: 1em;
-
       a {
         color: ${({ theme }) => theme.foreground};
 
@@ -46,13 +55,4 @@ export default styled(SearchResult)`
     }
   }
 
-  .ais-PoweredBy {
-    display: flex;
-    justify-content: flex-end;
-    font-size: 80%;
-
-    svg {
-      width: 70px;
-    }
-  }
 `
