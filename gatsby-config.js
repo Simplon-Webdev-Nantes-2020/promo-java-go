@@ -25,6 +25,7 @@ module.exports = {
                     maxWidth: 800,
                   },
                 },
+                'gatsby-remark-static-images',
                 {
                   resolve: "gatsby-remark-external-links",
                   options: {
