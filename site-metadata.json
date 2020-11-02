@@ -20,11 +20,6 @@
                 "has_subnav": true,
                 "subnav_links": [
                     {
-                        "label": "HTML CSS",
-                        "url": "/docs/html",
-                        "style": "link"
-                    },
-                    {
                         "label": "Java",
                         "url": "/docs/java",
                         "style": "link"
@@ -42,6 +37,11 @@
                     {
                         "label": "Conception",
                         "url": "/docs/conception",
+                        "style": "link"
+                    },
+                    {
+                        "label": "Ressources",
+                        "url": "/docs/ressource",
                         "style": "link"
                     }
                 ]

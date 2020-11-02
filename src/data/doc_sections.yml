@@ -1,19 +1,21 @@
 root_docs_path: /docs
 sections:
   - java
-  - html
   - spring
   - env
   - conception
+  - ressource
 java:
   root_docs_path: /docs/java
   sections:
     - general
     - poo
     - coder
-html:
-  root_docs_path: /docs/html
+ressource:
+  root_docs_path: /docs/ressource
   sections:
+    - langage    
+    - gestion
 spring:
   root_docs_path: /docs/spring
   sections:

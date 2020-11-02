@@ -14,12 +14,6 @@ sections:
       - label: Java
         url: /docs/java
         style: primary
-      - label: HTML CSS JS
-        url: /docs/html
-        style: primary
-        icon_class: lorem-ipsum
-        new_window: false
-        type: action
       - label: Spring
         url: /docs/spring
         style: primary
@@ -34,6 +28,12 @@ sections:
         type: action
       - label: Conception
         url: /docs/conception
+        style: primary
+        icon_class: lorem-ipsum
+        new_window: false
+        type: action
+      - label: Ressources
+        url: /docs/ressource
         style: primary
         icon_class: lorem-ipsum
         new_window: false

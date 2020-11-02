@@ -1,22 +1,74 @@
-# Site statique
+# Blog de la promo 3 java Simplon-Nantes
+
+C'est un site gatsby.js et donc par défaut c'est du nodeJs.
 
 ## installation en local
 
-1. cloner le repo
+1. fork puis clone du repo
 1. yarn install
-1. gatsby developp
 
-## Ajouter de la documentation
+### Exécution en local
 
-Dans le dossier `src/pages/docs`, il y a un répertoire par thème (java, git, html, etc...). On parle ici de doc_sessions.
+#### Serveur de travail
 
-### Ajout d'une page dans un thème existant
+Pour lancer un serveur local et visualiser vos modifications :  
+`yarn run develop`
 
-Prenons l'exemple du thème java.  
-Recherchez le fichier `src/data/doc_sections.yml`. Dans `java.sections`, vous trouverez le sous-thème (java, spring, builder, ...).  
-A chaque sous-thème correspond un dossier dans même nom. Vous placerez la page dans ce dossier.
+Cette commande crée un exécutable qui prend en compte les modifications en temps réel.  
+Vous pouvez voir votre site sur localhost:8000.  
+Trois choses à savoir :
 
-1. création d'un fichier markdown dans src/pages/doc/java/...
+* La construction est longue
+* le plugin gatsby-plugin-manifest (qui sert pour le PWA) est très long. Le mieux est de le mettre en commentaire (sans push) dans gatsby-config.js
+* Un markdown sans entête fait planter le serveur
+
+#### Serveur statique
+
+Ici, on va générer le site static donc les fichiers dans le dossier public.
+Les 2 commandes suivantes sont facultatives :  
+
+`yarn run build`  
+`yarn run serve`  
+Le serveur est actif sur le port 9000
+
+## Mise en ligne du site
+
+C'est la branche master qui est reliée avec l'hébergeur.
+Le site est installé chez netlify.
+Vous faites un push sur master (ou validez une pull request), quelques minutes plus tard, les modifications sont en ligne.
+
+## Workflow de mise à jour du site
+
+Le dépot github est protégé. Faites un fork puis un clone.  
+Travaillez sur la branche preview.
+Quand votre article est fini, vous pushez cette branche.  
+L'administrateur, vérifie l'article sur le preview, puis si c'est ok le fusionne sur le master.
+
+## Ajouter un article de blog
+
+1. créer un nouvel article dans le dossier `src/pages/blog`
+1. renseigner l'entête du markdown
+
+    ```yml
+    ---
+    title: C'est le titre de l'article
+    excerpt: >-
+    C'est un résumé court
+    author: 9a porte son nom
+    date: date de l'article
+    image: image de l'article
+    thumb_image: image affichée dans la liste des articles
+    template: post
+    ---
+    ```
+
+1. positionner les images dans le dossier `static/images/blog`
+
+## Ajouter des liens ressources
+
+Dans le dossier `src/pages/docs/ressource`.
+
+1. création d'un fichier markdown si existant
 1. Ajouter une entête en se basant sur l'exemple suivant
 
     ```yml
@@ -24,80 +76,13 @@ A chaque sous-thème correspond un dossier dans même nom. Vous placerez la page
     title: Définition
     weight: 1
     template: docs
-    doc_sections: java
+    doc_sections: ressource
     ---
     ```
 
-    Le titre est libre. template est toujours à docs. weight est l'ordre d'apparition dans le menu. doc_section est le thème principal.
+    Le titre est libre. template est toujours à docs. weight est l'ordre d'apparition dans le menu. doc_section est toujours ressource
 1. écrivez votre texte en markdown
-1. Ajouter des images comme dans un markdown classique
+1. Ajouter des images le même dossier que l'article
+1. Aidez-vous du site exemple [libris](https://themes.stackbit.com/demos/libris/blue/style-guide/)
 1. vérifier le résultat
 1. si le site s'est planté, sûrement que vous avez mal écrit l'entête
-
-### Ajouter un menu dans la documentation
-
-Il s'agit du menu contextuel, situé à gauche de l'écran.
-
-#### menu de niveau 1
-
-Exemple : java.
-
-* Créer le dossier `java` sous src/pages/docs
-* Ajouter un fichier index.md
-* Dans le fichier src/data/doc_sections.yml, ajouter votre menu à 2 endroits
-
-```yml
-root_docs_path: /docs
-sections:
-  - java
-  - html
-  - git
-```
-
-```yml
-java:
-  root_docs_path: /docs/java
-  sections:
-    - general
-    - spring
-```
-
-#### menu de niveau 2
-
-1. Ajouter un dossier sous le niveau 1 `../java/spring`
-1. Ajouter un fichier index.md
-1. Écrire les tutos dans ce dossier
-
-## Ajouter un menu au site (navbar en haut à droite de la page)
-
-* Dans le fichier site-metadata.json
-* propriétés header.nav_links
-
-```json
-        "nav_links": [
-            {
-                "label": "Une page simple",
-                "url": "/page_simple",
-                "style": "link",
-                "has_subnav": false
-            },
-            {
-                "label": "Deux pages",
-                "url": "#",
-                "style": "link",
-                "has_subnav": true,
-                "subnav_links": [
-                    {
-                        "label": "page 1",
-                        "url": "/page1",
-                        "style": "link"
-                    },
-                    {
-                        "label": "page2",
-                        "url": "/page2",
-                        "style": "link"
-                    }
-                ]
-            },
-        ]
-```
