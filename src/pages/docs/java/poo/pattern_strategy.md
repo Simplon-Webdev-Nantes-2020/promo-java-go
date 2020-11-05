@@ -5,6 +5,8 @@ template: docs
 doc_sections: java
 ---
 
+> Ici nous abordons une notion compliquée
+
 Le polymorphisme d'interface permet de mettre en oeuvre le **design pattern strategy**.
 Ce pattern répond à la problématique : comment réaliser simplement des opérations différentes par le même objet.  
 Prenons un exemple pour comprendre la problématique.  

@@ -1,6 +1,6 @@
 ---
 title: Le polymorphisme simple
-weight: 36
+weight: 26
 template: docs
 doc_sections: java
 ---
