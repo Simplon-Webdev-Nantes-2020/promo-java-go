@@ -227,3 +227,33 @@ Grâce à cette annotation, Spring identifiera cette classe comme une classe 'sp
 La méthode hello renvoie la chaîne de caractère "Helloworld".  
 Pour relier cette méthode à une URI, on va ajouter à la déclaration de la méthode l'annotation **@RequestMapping(***chemin***).** (chemin étant la chaîne de caractère qui sera ajoutée à la fin de l'URL).  
 Comme notre méthode retourne un variable (ici une chaîne de caractères), il faut aussi ajouter l'annotation **@ResponseBody**.
+
+```java
+package co.simplon.helloworld;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+@RequestMapping("/bienvenue")
+public class MessageController {
+
+    @RequestMapping("")
+    @ResponseBody
+    public String hello()
+    {
+        return "Bienvenue tout le monde";
+    }
+
+    @RequestMapping("/{phrase}")
+    @ResponseBody
+    public String afficherMessage(@PathVariable("phrase") String phrase)
+    {
+        return "Bienvenue " + phrase;
+    }
+
+}
+
+```
