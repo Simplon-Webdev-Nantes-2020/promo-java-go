@@ -20,6 +20,8 @@ spring:
   root_docs_path: /docs/spring
   sections:
     - spring_boot
+    - web
+    - parametrage
 env:
   root_docs_path: /docs/env
   sections:
