@@ -97,7 +97,14 @@ Voici les différentes classes ou méthodes que vous pouvez rencontrer avant Jav
 La gestion des dates en Java a toujours été compliquée.
 La date est stockée au format numérique. Il s'agit du nombre de millisecondes depuis le 01/01/1970.  
 Au cours de ses versions, Java a sorti plusieurs API pour gérer les dates. La multiplicité des classes et leur imperfection n'a pas simplifié les choses.  
-Aujourd'hui, il faut utiliser l'API `Date` and `Time`.
+Depuis Java 8, il faut utiliser l'API `Date-Time` (java.time).
+Pour stocker une valeur, voici les classes utiles :
+
+* une date : LocalDate
+* une date + heure : LocalDateTime
+* une heure (sans date) : LocalTime
+
+Il existe d'autres classes (Period, Duration, Instant, ZonedDateTime, ZoneId, ZoneOffset) que vous découvrirez au fur et à mesure des besoins.  
 Voici des exemples d'utilisation sur le site [developpez.com](http://soat.developpez.com/tutoriels/java/time-date-java8/).  
 
 ## Les collections
