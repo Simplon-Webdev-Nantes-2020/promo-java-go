@@ -1,9 +1,9 @@
 ---
 title: Svelte
 excerpt: >-
-   Svelte c'est super.
+   Retour sur une veille techno portant sur ce framework.
 author: Joseph Allain
-date: "2020-11-09"
+date: "2020-11-11"
 image: images/blog/Svelte.jpg
 thumb_image: images/blog/Svelte.jpg
 template: post
