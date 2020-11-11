@@ -4,8 +4,8 @@ excerpt: >-
    Svelte c'est super.
 author: Joseph Allain
 date: "2020-11-09"
-image: images/blog/Bien_poser_une question.jpg
-thumb_image: images/blog/Bien_poser_une question.jpg
+image: images/blog/Svelte.jpg
+thumb_image: images/blog/Svelte.jpg
 template: post
 ---
 
