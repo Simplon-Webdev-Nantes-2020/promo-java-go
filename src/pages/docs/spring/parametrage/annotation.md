@@ -120,10 +120,9 @@ Vous pouvez aussi indiquer la classe à instancier.
 
 ### @Autowired (ou @Inject)
 
-Vous annotez un constructeur ou une méthode avec cette dernière, Spring va instancier automatiquement l'objet lors de l'utilisation.
-Dans l'exemple précédent, messageBean n'a pas été instancié par un new, et pourtant on l'utilise dans 2 méthodes.
-@Inject est pratiquement identique à @Autowired : Autowired, c'est Spring, @Inject c'est JSR.
-Les annotations @Inject et @Autowired peuvent être positionnées :
+Quand vous annotez un objet ou une méthode avec cette @Autowired, Spring va instancier automatiquement l'objet lors de l'utilisation.
+@Inject est pratiquement identique à @Autowired : @Autowired, c'est Spring, @Inject c'est JSR.  
+Les annotations @Autowired peuvent être positionnées :
 
 * sur un attribut
 * sur un setter

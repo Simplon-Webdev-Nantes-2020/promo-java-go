@@ -21,6 +21,7 @@ spring:
   sections:
     - spring_boot
     - web
+    - persistance
     - parametrage
 env:
   root_docs_path: /docs/env
