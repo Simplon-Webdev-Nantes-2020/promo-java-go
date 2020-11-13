@@ -27,6 +27,6 @@ DELETE /api/artiste/[id] : supprime l'enregistrement Artiste correspondant à l'
 ## Compilation et exécution
 
 Dans la suite du projet, vous utilisez Eclipse pour compiler et exécuter.
-Vous pouvez aussi le faire en ligne de commande.
-`mvn clean install` pour compiler. `mvn jukebox:run` pour lancer le projet.
-
+Vous pouvez aussi le faire en ligne de commande dans le dossier racine du projet :  
+`mvnw clean install` pour compiler.  
+`mvnw spring-boot:run` pour lancer le projet.
