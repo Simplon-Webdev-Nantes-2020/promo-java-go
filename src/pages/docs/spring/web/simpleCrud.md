@@ -35,7 +35,9 @@ supprime l'enregistrement Artiste correspondant à l'id fourni.
 Dans la suite du projet, vous utilisez Eclipse pour compiler et exécuter.
 Vous pouvez aussi le faire en ligne de commande dans le dossier racine du projet :  
 `mvnw clean install` pour compiler.  
-`mvnw spring-boot:run` pour lancer le projet.
+`mvnw spring-boot:run` pour lancer le projet.  
+
+Vous pouvez tester l'API avec le logiciel [Postman](https://www.postman.com/downloads/).
 
 ## Le rôle de chaque classe
 
@@ -69,7 +71,7 @@ C'est l'entité Artist. Nous avons donc une classe contenant tous les attributs 
 public class Artist {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @NotBlank(message = "Name can't be empty")
@@ -115,7 +117,7 @@ Nous notons aussi des annotations : @Entity, @Id, @NotBlank.
 * [@Entity](/docs/spring/parametrage/annotation/#annotations_sur_l_entit) indique à Spring qu'il s'agit d'une entité (un modèle).
 * [@id](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) identifie la clef primaire.
 * [@GeneratedValue](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) indique que la clef primaire est calculée.  
-`(strategy = GenerationType.AUTO)` indique que la valeur est auto-incrémentée.
+`(strategy = GenerationType.IDENTITY)` indique que c'est un id auto-incrémenté.
 * [@NotBlank](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) peut être mis sur chaque attribut. Il signifie que la valeur ne pas pas être nulle.  
 `(message = "Name can't be empty")` est le message renvoyé si le client voulait valider cet enregistrement avec une valeur interdite.
 
@@ -423,7 +425,7 @@ Le type Optional contient un objet Artist, il évite le `nullPointerException`.
 ```java
 @PostMapping("/artists")
     ResponseEntity<Artist> addArtist(@Valid @RequestBody Artist artist){
-        return ResponseEntity.ok().body(artist);
+        return ResponseEntity.ok().body(service.insert(artist));
     }
 ```
 
