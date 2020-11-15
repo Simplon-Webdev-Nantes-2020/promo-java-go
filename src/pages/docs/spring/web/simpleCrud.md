@@ -495,6 +495,7 @@ spring.datasource.username=sa
 spring.datasource.password=
 spring.datasource.driver-class-name=org.h2.Driver
 spring.datasource.platform=h2
+spring.h2.console.enabled=true
 ```
 
 Vous remarquez que c'est une base de données h2. Cette base est embarquée dans Spring.
@@ -502,6 +503,10 @@ H2 est très pratique lorsque l'on peut pas installer une base de données sur u
 C'est aussi très pratique pour exécuter les tests unitaires.
 H2 peut être permanente, ou uniquement en mémoire. C'est ce choix qui est dans Spring.
 Ceci signifie que lorsque votre serveur Spring tombe, tout est perdu.  
+
+Pour vérifier les données dans la base h2, nous avons ajoutez le paramètre `spring.h2.console.enabled`.
+Si vous allez sur l'url `localhost:8080/h2-console`, vous accéderez à la base en mémoire.  
+
 Pour gérer une base de données h2, nous ajoutons aussi une dépendance dans le projet Maven :
 
 ```xml
