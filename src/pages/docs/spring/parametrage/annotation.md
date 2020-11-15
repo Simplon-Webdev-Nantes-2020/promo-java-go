@@ -297,9 +297,13 @@ private String systemValue;
 ### Annotation sur les champs
 
 * @Id
+identifie la clef primaire.
 * @GeneratedValue : lié à l'id
+indique que la clef primaire est calculée.
+* @GeneratedValue(strategy = GenerationType.AUTO)
+indique que la valeur est auto-incrémentée
 * @NotBlank, @NotNull, @NotEmpty : vérification non vide
-* @NotEmpty(message = "{error.login.empty})" : non vide avec message d'erreur dans un fichier i18n
+* @NotEmpty(message = "{error.login.empty})" : non vide avec message d'erreur dans un fichier i18n (multi-lingue)
 * @Email(message = "{error.email.format}") : validation d'un email
 * @Pattern : expression régulière
 * @Column : correspondance avec le champ de la table

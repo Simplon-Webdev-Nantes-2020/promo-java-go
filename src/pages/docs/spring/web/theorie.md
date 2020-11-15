@@ -28,6 +28,31 @@ DELETE supprime la ressource.
 POST crée la ressource.
 PUT écrase la ressource, donc dans notre cas, la met à jour.
 
+## L'API REST
+
+Une API est une Interface de Programmation d'Application. C'est un terme générique.  
+REST est un standard, un type d'architecture basé sur le protocole HTTP. En aucun cas c'est un protocole.  
+REST utilise entre autre les URL et les verbes. Une ressource est identifiée par son URL.  
+On va rechercher toutes les ressources ou une ressource avec son id.
+On va créer une ressource, l'écraser ou la supprimer.  
+Les informations sont dans :
+
+* l'URL, qu'on appelle endpoint. On peut y stocker un id, ou le nom, la date d'un article.
+* les paramètres, situés à la suite du endpoint et séparé par un point d'interrogation (?).
+* le body. Ces informations ne sont pas visible. Le body est utilisé pour la création et la maj des informations.
+
+L'API REST se base sur 6 grands principes :
+
+1. Séparation entre client et serveur
+1. Absence d’état de sessions (stateless)
+1. Uniformité de l’interface
+1. Mise en cache
+1. Architecture en couches
+1. Code à la demande
+
+Pour écrire une bonne API, lisez l'article de [gekko](https://www.gekko.fr/les-bonnes-pratiques-a-suivre-pour-developper-des-apis-rest/), 
+et conservez sous la main le petit [Quick Reference Card](https://blog.octo.com/wp-content/uploads/2014/12/OCTO-Refcard_API_Design_EN_3.0.pdf) d'Octo.
+
 ## Le MVC
 
 ### Pourquoi
