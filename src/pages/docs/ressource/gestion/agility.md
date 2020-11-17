@@ -9,6 +9,7 @@ doc_sections: ressource
 
 * [DÉCOUVRIR SCRUM EN 10 MINUTES](https://lachoseagile.wordpress.com/2012/03/26/decouvrir-scrum-en-10-minutes/)
 * [SCRUM pour les nuls 2020](https://www.youtube.com/watch?v=kZx_vrMZxGk) (vidéo)
+* [Atlassian Agile Coach](https://www.atlassian.com/fr/agile/project-management)
 * [Méthodes Agiles - Bien les comprendre pour bien démarrer](https://www.youtube.com/watch?v=tsGZsv0f57M) (vidéo)
 * [Scrum guide](https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-French.pdf)
 
