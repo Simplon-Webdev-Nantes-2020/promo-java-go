@@ -530,6 +530,14 @@ img {
   }
 }
 
+.grid-col-8 {
+  .grid-item {
+    -ms-flex-preferred-size: 12.5%;
+    flex-basis: 12.5%;
+    max-width: 12.5%;
+  }
+}
+
 .grid-swap {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
