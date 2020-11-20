@@ -1,0 +1,26 @@
+.student-grid-item {
+    text-align: center;
+    background-color: _palette(blanc);
+    &:hover {
+      cursor: pointer;
+      box-shadow: 1px 2px 4px _palette(gradient2);
+    }
+    &__avatar {
+      //display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.625em;
+    }
+    .name {
+      font-size: 1em;
+      color:_palette(secondary);
+    }
+    .position {
+        font-size: 0.875em;
+        color:_palette(accent);
+    }
+    .title {
+      font-size: 0.8em;
+      color:_palette(secondary);
+    }
+  }

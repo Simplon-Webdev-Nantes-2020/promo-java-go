@@ -43,13 +43,13 @@ sections:
     title: Students Section
     students:
       - name: Cassie McCoy
-        order: 1
+        order: 2
         title: Success is no accident. It is hard work, perseverance, learning, studying, & sacrifice.
         position: Entrepreneur, Dreamer, Developer
         avatar: images/students/cassie-mc-coy.png
         url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
       - name: Clarke Griffin
-        order: 2
+        order: 1
         title: There are no secrets to success. It is the result of preparation, hard work, and learning from failure.
         position: Founder - Clarke Models Inc
         avatar: images/students/clarke-griffin.png
@@ -67,13 +67,13 @@ sections:
         avatar: images/students/jean-jollet.png
         url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
       - name: John Murphy
-        order: 5
+        order: 6
         title: Entrepreneurship is all about deferred gratification.
         position: Founder, Hello World
         avatar: images/students/john-murphy.png
         url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
       - name: Marcus Kane
-        order: 6
+        order: 5
         title: What is great about entrepreneurship is that entrepreneurs create the tangible from the intangible.
         position: Founder & CEO - Arc Software
         avatar: images/students/marcus-kane.png
@@ -83,6 +83,24 @@ sections:
         title: Entrepreneurship is a muscle, and winning is an endurance game.
         position: Serial Entrepreneur
         avatar: images/students/octavia-blake.png
+        url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
+      - name: Octavia Blake
+        order: 10
+        title: Entrepreneurship is a muscle, and winning is an endurance game.
+        position: Serial Entrepreneur
+        avatar: images/students/octavia-blake.png
+        url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
+      - name: Octavia Blake
+        order: 9
+        title: Entrepreneurship is a muscle, and winning is an endurance game.
+        position: Serial Entrepreneur
+        avatar: images/students/octavia-blake.png
+        url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
+      - name: Marcus Kane
+        order: 8
+        title: What is great about entrepreneurship is that entrepreneurs create the tangible from the intangible.
+        position: Founder & CEO - Arc Software
+        avatar: images/students/marcus-kane.png
         url: https://github.com/orgs/Simplon-Webdev-Nantes-2020/
   - section_id: features
     type: section_grid

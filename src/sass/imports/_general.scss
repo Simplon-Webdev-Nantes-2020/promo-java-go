@@ -591,6 +591,14 @@ img {
     padding-left: 1.5vw;
     padding-right: 1.5vw;
   }
+
+  .grid-col-8 {
+    .grid-item {
+      -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
+      max-width: 33%;
+    }
+  }
 }
 
 @media only screen and (max-width: 760px) {
@@ -599,6 +607,13 @@ img {
       -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
       max-width: 100%;
+    }
+  }
+  .grid-col-8 {
+    .grid-item {
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+      max-width: 50%;
     }
   }
 }
@@ -649,4 +664,5 @@ img {
       max-width: 100%;
     }
   }
+
 }

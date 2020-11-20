@@ -1,8 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-
 import CardGridItem from './studentGridItem'
-import './student.scss';
 
 export default class SectionContent extends React.Component {
 
@@ -12,7 +10,7 @@ export default class SectionContent extends React.Component {
         return (
           <div className="block-content">
             <div className="grid grid-col-8">
-              {(section.students || []).map(student => (
+              {(section.students.sort((a,b) => a.order - b.order) || []).map(student => (
                 <CardGridItem
                   student={student}
                   key={student.name}
