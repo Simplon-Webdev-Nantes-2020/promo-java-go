@@ -50,6 +50,7 @@ L'API REST se base sur 6 grands principes :
 1. Architecture en couches
 1. Code à la demande
 
+Vous êtes séduit par les API et vous voulez en connaître plus, c'est par [ici](https://openclassrooms.com/fr/courses/6573181-adoptez-les-api-rest-pour-vos-projets-web).  
 Pour écrire une bonne API, lisez l'article de [gekko](https://www.gekko.fr/les-bonnes-pratiques-a-suivre-pour-developper-des-apis-rest/), 
 et conservez sous la main le petit [Quick Reference Card](https://blog.octo.com/wp-content/uploads/2014/12/OCTO-Refcard_API_Design_EN_3.0.pdf) d'Octo.
 
