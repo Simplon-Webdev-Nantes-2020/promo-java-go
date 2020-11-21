@@ -9,7 +9,7 @@ doc_sections: spring
 
 Pour étudier Spring, nous allons commencer par écrire un petit projet.
 Nous allons gérer un jukebox. Le jukebox contient des artistes, des albums et des titres.  
-Vous pouvez consulter les sources du projet sur [github](https://github.com/Simplon-Webdev-Nantes-2020/jukebox).  
+Vous pouvez consulter les sources du projet sur [github](https://github.com/Simplon-Webdev-Nantes-2020/jukebox-simple-crud).  
 Nous commençons par écrire l'API pour gérer une table, la table artiste.
 Nous pouvons créer un enregistrement, le lire, le modifier, et le supprimer (CRUD).
 
