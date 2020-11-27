@@ -21,6 +21,7 @@ spring:
   sections:
     - spring_boot
     - web
+    - api_rest
     - persistance
     - parametrage
 env:
