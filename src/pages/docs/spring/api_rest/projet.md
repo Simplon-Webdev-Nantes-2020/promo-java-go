@@ -5,13 +5,25 @@ template: docs
 doc_sections: spring
 ---
 
-## Quatre classes
+## Les quatre classes
 
-L'api permet la gestion de 4 classes.  
-Dans un premier temps, nous allons créer ces 4 classes sans lien entre elles et les exposer via des url.
-Nous pourrons exécuter les 4 fonctions du CRUD.  
-Pour cela, nous partons du projet précédent [jukebox simple CRUD](../../web/simpleCrud).  
-Ne revenons pas sur la gestion de l'artiste. La gestion des 3 autres classes est identique.  
+Le projet permet la gestion de 4 classes.
+Voici le diagramme des classes :
+
+![diagramme des classe](jukebox.jpeg)
+
+Nous avons quatre classes, deux relation OneToMany, et une relation ManyToMany.  
+La relation ManyToMany entre Playlist et Track devrait donner naissance à une nouvelle classe, si nous voulions donner un ordre de lecture des tracks.
+Ce n'est pas le choix que nous faisons.  
+
+## Les temps
+
+* Dans un premier temps, nous allons créer ces quatre classes sans lien entre elles et les exposer via des url.
+* Nous ajoutons les relations entre les classes.
+* Nous ajoutons le sérialisation vers JSON.
+* La gestion des erreurs
+* Les tests unitaires et d'intégration.
+* La gestion des utilisateurs, identification et droits.
 
 ## Le github
 
@@ -19,6 +31,9 @@ Vous trouverez l'intégralité du projet sur le [github](https://github.com/Simp
 
 ## Les points d'entrée de l'API
 
+Nous allons écrire les quatre fonctions du CRUD.  
+Pour cela, nous partons du projet précédent [jukebox simple CRUD](../../web/simpleCrud).  
+Ne revenons pas sur la gestion de l'artiste. La gestion des 3 autres classes est identique.  
 Ce qui donne 20 url pour artist, album, track, playlist :
 
 * GET /jukebox/artists  
