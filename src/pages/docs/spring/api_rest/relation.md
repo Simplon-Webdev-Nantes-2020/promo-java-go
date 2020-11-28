@@ -54,6 +54,58 @@ L'annotation `@OneToMany(mappedBy = "artist")` indique que nous sommes de l'autr
 Il est inutile de décrire à nouveau la relation.
 C'est l'attribut `mappedBy` qui l'explique en indiquant l'attribut d'`Album` concerné, ici `private Artist artist`.
 
+### Les albums de l'artiste
+
+Nous le verrons plus tard avec l'interface JSON, l'API actuelle permet de connaître les artistes et les albums.
+D'un point de vue utilisateur de l'API, les artistes n'affiche pas leurs albums.
+Nous allons donc écrire une nouvelle entrée dans l'API au niveau du contrôleur.
+Elle permettra d'afficher tous les albums d'un artiste.
+Ceci ce traduit par le code suivant.  
+
+Lecture des albums de l'artiste : ajout de la méthode `findByArtistId` dans le repository `AlbumRepository` :
+
+```java
+public interface AlbumRepository extends JpaRepository<Album, Long>{
+    ...
+    public List<Album> findByArtistId(Long artistId);
+}
+```
+
+Ajout d'une méthode dans le service `AlbumService` :
+
+```java
+@Service
+public class AlbumServiceImpl implements AlbumService {
+    ...
+    @Override
+    public List<Album> findByArtist(Long id) {
+        return repository.findByArtistId(id);
+    }
+    ...
+```
+
+Et ajout d'un point d'entrée dans le contrôleur `AlbumController` :
+
+```java
+@RestController
+@RequestMapping("/jukebox")
+public class AlbumController extends AppController {
+    ...
+    @CrossOrigin
+    @GetMapping("/artists/{id}/albums")
+    public ResponseEntity<List<Album>> getAllAlbum(@PathVariable(value="id") long id) {
+        List<Album> listAlbum;
+        try {
+            listAlbum = service.findByArtist(id);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok().body(listAlbum);
+    }
+    ...
+}
+```
+
 ## Relation entre Album et Track
 
 Un album est composé de plusieurs pistes (track). Une piste est sur une seul album.
