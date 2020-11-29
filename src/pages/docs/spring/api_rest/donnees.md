@@ -62,11 +62,8 @@ public class Artist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name can't be empty")
     private String name;
-
     private String bio;
-
     private Integer fanNumber;
 
     // getter/setter
@@ -82,9 +79,7 @@ public class Album {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name can't be empty")
     private String title;
-
     private LocalDate releaseDate;
 
     // getter/setter
@@ -100,11 +95,8 @@ public class Track {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name can't be empty")
     private String title;
-
     private int duration;
-
     private String preview;
 
     // getter/setter
@@ -120,7 +112,6 @@ public class Playlist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name can't be empty")
     private String name;
 
     // getter/setter

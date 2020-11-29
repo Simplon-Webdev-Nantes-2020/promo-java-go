@@ -65,3 +65,18 @@ Chacun de ces rôles est établit dans un package.
 ![package](package.jpg)
 Chaque package contient un nombre de classes.
 ![package](classes.jpg)
+
+## Tester le projet
+
+Vous trouverez dans le repo github un dossier postman qui contient 2 fichiers :
+
+* localhost base h2.postman_environment.json  
+est l'environnement d'exécution
+* Jukebox.postman_collection.json  
+est la collection
+
+Ces deux fichiers sont à importer dans Postman.
+Pour exécuter une requête de la collection jukebox, il faudra dans un premier temps sélectionner l'environnement localhost base h2.  
+Vous pourrez aussi, lancer toutes les requêtes à la suite avec le runner.  
+
+![postman](postman.jpg)
