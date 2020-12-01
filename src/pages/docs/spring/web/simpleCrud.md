@@ -39,6 +39,136 @@ Vous pouvez aussi le faire en ligne de commande dans le dossier racine du projet
 
 Vous pouvez tester l'API avec le logiciel [Postman](https://www.postman.com/downloads/).
 
+## JPA
+
+A partir de maintenant, nous allons travailler avec JPA/Hibernate.  
+Pour cela, il faut déclarer une nouvelle dépendance dans le pom.xml.
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+```
+
+Pour gérer une base de données h2, nous ajoutons aussi une dépendance :
+
+```xml
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <scope>runtime</scope>
+</dependency>
+```
+
+## Les ressources
+
+Ce sont les ressources nécessaires au bon fonctionnement du serveur.  
+Tout ce projet ne peut fonctionner sans paramétrage et ressources.
+Les ressources sont dans le dossier src/main/ressource.  
+Il peut avoir un dossier ressource côté test qui servira pour l'exécution des tests unitaires.
+
+### les properties
+
+Le paramétrage se décrit dans le fichier  application.properties.
+
+#### Connection à la base de données
+
+Spring se comporte comme un client vis à vis de la base de données.
+Il lui faut donc une connection.
+C'est ce que nous déclarons dans le fichier application.properties
+
+```ini
+spring.datasource.url=jdbc:h2:mem:jukebox
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.platform=h2
+spring.h2.console.enabled=true
+```
+
+Vous remarquez que c'est une base de données h2. Cette base est embarquée dans Spring.
+H2 est très pratique lorsque l'on peut pas installer une base de données sur un serveur.
+C'est aussi très pratique pour exécuter les tests unitaires.
+H2 peut être permanente, ou uniquement en mémoire. C'est ce choix qui est dans Spring.
+Ceci signifie que lorsque votre serveur Spring tombe, tout est perdu.  
+
+Pour vérifier les données dans la base h2, nous avons ajoutez le paramètre `spring.h2.console.enabled`.
+Si vous allez sur l'url `localhost:8080/h2-console`, vous accéderez à la base en mémoire.  
+
+#### Le paramétrage
+
+Spring est zéro conf pour un démarrage simple.
+Cela n'empêche pas d'ajouter du paramétrage selon ses besoins.
+Voici quelques paramètres intéressants pour démarrer :  
+
+Suppression de la bannière Spring au démarrage :
+
+```ini
+spring.main.banner-mode=off
+```
+
+Création, maj de la base de données au démarrage. Ici il faut que ce soit none pour la base h2 :
+
+```ini
+spring.jpa.hibernate.ddl-auto=none
+```
+
+Trace des requêtes SQL dans la console :
+
+```ini
+spring.jpa.show-sql = true
+```
+
+Écriture dans un fichier de log :
+
+```ini
+logging.level.root=INFO
+logging.file.name=c:/log/springboot-jukebox.log
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+```
+
+### Les scripts SQL
+
+Pour créer la base de données, nous fournissons dans ce projet le schéma et les données.
+Spring détecte ces fichiers et les exécute au lancement.  
+
+Le fichier schema.sql :
+
+```sql
+CREATE SCHEMA TEST_SCHEMA AUTHORIZATION SA;
+
+use TEST_SCHEMA;
+
+CREATE TABLE artist (
+    id   INTEGER   PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    bio VARCHAR(255),
+    fan_number INTEGER
+);
+```
+
+Le fichier data-h2.sql :
+
+```sql
+use TEST_SCHEMA;
+insert into artist(name, bio, fan_number)
+    values('Celtic woman','En 2004, les producteurs Sharon Browne et David Downes, directeur musical...',31760);
+insert into artist(name, bio, fan_number)
+    values('M. Pokora','Né le 26 septembre 1985 à Strasbourg d''un père footballeur et d''une mère fonctionnaire',1310570);
+insert into artist(name, bio, fan_number)
+    values('Kendji Girac','Kendji Maillé est né à Périgueux, en Dordogne, le 3 juillet 1996.',1014955);
+insert into artist(name, bio, fan_number)
+    values('Julien Doré','Julien Doré est né le 7 juillet 1982 à Alès dans le Gard. Après des études ',708365);
+insert into artist(name, bio, fan_number)
+    values('Patrick Fiori','Patrick Fiori, né le 23 septembre 1969 sous le nom de Jean-François Chouchayan',216351);
+insert into artist(name, bio, fan_number)
+    values('Trois Cafés Gourmands','',167304);
+insert into artist(name, bio, fan_number)
+    values ('Nolwenn Leroy','C''est le 28 septembre 1982 que voit le jour, à Saint-Renan (Finistère) que voile jour Nolwenn Le Magueresse',230900);
+```
+
 ## Le rôle de chaque classe
 
 Pour écrire une API Rest, vous devez créer quatre packages :
@@ -473,121 +603,3 @@ ResponseEntity<Artist> deleteArtist(@PathVariable(value="id") long id){
 Cette méthode traite une requête `/jukebox/artists/xxx` avec le verbe DELETE.
 DELETE supprime la ressource.
 Nous avons besoin uniquement de l'id qui est dans le path (`@PathVariable`).
-
-## Les ressources
-
-Ce sont les ressources nécessaires au bon fonctionnement du serveur.  
-Tout ce projet ne peut fonctionner sans paramétrage et ressources.
-Les ressources sont dans le dossier src/main/ressource.  
-Il peut avoir un dossier ressource côté test qui servira pour l'exécution des tests unitaires.
-
-### les properties
-
-Le paramétrage se décrit dans le fichier  application.properties.
-
-#### Connection à la base de données
-
-Spring se comporte comme un client vis à vis de la base de données.
-Il lui faut donc une connection.
-C'est ce que nous déclarons dans le fichier application.properties
-
-```ini
-spring.datasource.url=jdbc:h2:mem:jukebox
-spring.datasource.username=sa
-spring.datasource.password=
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.platform=h2
-spring.h2.console.enabled=true
-```
-
-Vous remarquez que c'est une base de données h2. Cette base est embarquée dans Spring.
-H2 est très pratique lorsque l'on peut pas installer une base de données sur un serveur.
-C'est aussi très pratique pour exécuter les tests unitaires.
-H2 peut être permanente, ou uniquement en mémoire. C'est ce choix qui est dans Spring.
-Ceci signifie que lorsque votre serveur Spring tombe, tout est perdu.  
-
-Pour vérifier les données dans la base h2, nous avons ajoutez le paramètre `spring.h2.console.enabled`.
-Si vous allez sur l'url `localhost:8080/h2-console`, vous accéderez à la base en mémoire.  
-
-Pour gérer une base de données h2, nous ajoutons aussi une dépendance dans le projet Maven :
-
-```xml
-<dependency>
-    <groupId>com.h2database</groupId>
-    <artifactId>h2</artifactId>
-    <scope>runtime</scope>
-</dependency>
-```
-
-#### Le paramétrage
-
-Spring est zéro conf pour un démarrage simple.
-Cela n'empêche pas d'ajouter du paramétrage selon ses besoins.
-Voici quelques paramètres intéressants pour démarrer :  
-
-Suppression de la bannière Spring au démarrage :
-
-```ini
-spring.main.banner-mode=off
-```
-
-Création, maj de la base de données au démarrage. Ici il faut que ce soit none pour la base h2 :
-
-```ini
-spring.jpa.hibernate.ddl-auto=none
-```
-
-Trace des requêtes SQL dans la console :
-
-```ini
-spring.jpa.show-sql = true
-```
-
-Écriture dans un fichier de log :
-
-```ini
-logging.level.root=INFO
-logging.file.name=c:/log/springboot-jukebox.log
-logging.level.org.hibernate.SQL=DEBUG
-logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
-```
-
-### Les scripts SQL
-
-Pour créer la base de données, nous fournissons dans ce projet le schéma et les données.
-Spring détecte ces fichiers et les exécute au lancement.  
-
-Le fichier schema.sql :
-
-```sql
-CREATE SCHEMA TEST_SCHEMA AUTHORIZATION SA;
-
-use TEST_SCHEMA;
-
-CREATE TABLE artist (
-    id   INTEGER   PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL,
-    bio VARCHAR(255),
-    fan_number INTEGER
-);
-```
-
-Le fichier data-h2.sql :
-
-```sql
-use TEST_SCHEMA;
-insert into artist(name, bio, fan_number)
-    values('Celtic woman','En 2004, les producteurs Sharon Browne et David Downes, directeur musical...',31760);
-insert into artist(name, bio, fan_number)
-    values('M. Pokora','Né le 26 septembre 1985 à Strasbourg d''un père footballeur et d''une mère fonctionnaire',1310570);
-insert into artist(name, bio, fan_number)
-    values('Kendji Girac','Kendji Maillé est né à Périgueux, en Dordogne, le 3 juillet 1996.',1014955);
-insert into artist(name, bio, fan_number)
-    values('Julien Doré','Julien Doré est né le 7 juillet 1982 à Alès dans le Gard. Après des études ',708365);
-insert into artist(name, bio, fan_number)
-    values('Patrick Fiori','Patrick Fiori, né le 23 septembre 1969 sous le nom de Jean-François Chouchayan',216351);
-insert into artist(name, bio, fan_number)
-    values('Trois Cafés Gourmands','',167304);
-insert into artist(name, bio, fan_number)
-    values ('Nolwenn Leroy','C''est le 28 septembre 1982 que voit le jour, à Saint-Renan (Finistère) que voile jour Nolwenn Le Magueresse',230900);
-```
