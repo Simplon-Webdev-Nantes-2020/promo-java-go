@@ -42,7 +42,7 @@ Vous pouvez tester l'API avec le logiciel [Postman](https://www.postman.com/down
 ## JPA
 
 A partir de maintenant, nous allons travailler avec JPA/Hibernate.  
-Pour cela, il faut déclarer une nouvelle dépendance dans le pom.xml.
+Pour cela, il faut déclarer une nouvelle dépendance dans le **pom.xml**.
 
 ```xml
 <dependency>
@@ -70,13 +70,13 @@ Il peut avoir un dossier ressource côté test qui servira pour l'exécution des
 
 ### les properties
 
-Le paramétrage se décrit dans le fichier  application.properties.
+Le paramétrage se décrit dans le fichier **application.properties**.
 
 #### Connection à la base de données
 
 Spring se comporte comme un client vis à vis de la base de données.
 Il lui faut donc une connection.
-C'est ce que nous déclarons dans le fichier application.properties
+C'est ce que nous déclarons dans le fichier **application.properties**.
 
 ```ini
 spring.datasource.url=jdbc:h2:mem:jukebox
@@ -134,7 +134,7 @@ logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
 Pour créer la base de données, nous fournissons dans ce projet le schéma et les données.
 Spring détecte ces fichiers et les exécute au lancement.  
 
-Le fichier schema.sql :
+Le fichier **schema.sql** :
 
 ```sql
 CREATE SCHEMA TEST_SCHEMA AUTHORIZATION SA;
@@ -149,7 +149,7 @@ CREATE TABLE artist (
 );
 ```
 
-Le fichier data-h2.sql :
+Le fichier **data-h2.sql** :
 
 ```sql
 use TEST_SCHEMA;
@@ -350,7 +350,7 @@ D'abord étudions les annotations, puis regardons chaque méthode.
 * [@Service](/docs/spring/parametrage/annotation/#component_repository_service) indique que c'est un service
 * [@Autowired](/docs/spring/parametrage/annotation/#autowired_ou_inject) indique que nous utilisons le modèle Artiste et plus précisément l'interface ArtistRepository. C'est une injection, donc c'est Spring qui s'occupe de l'instanciation.
 
-### findALL
+### findAll
 
 ```java
     public List<Artist> findAll(String search) {
