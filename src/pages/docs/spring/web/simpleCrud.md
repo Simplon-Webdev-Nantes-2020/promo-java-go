@@ -5,13 +5,15 @@ template: docs
 doc_sections: spring
 ---
 
-## Les données
+## Le projet
 
 Pour étudier Spring, nous allons commencer par écrire un petit projet.
 Nous allons gérer un jukebox. Ce jukebox contient uniquement des artistes.  
-Vous pouvez consulter les sources du projet sur [github](https://github.com/Simplon-Webdev-Nantes-2020/jukebox-simple-crud).  
-Nous commençons par écrire l'API pour gérer une table, la table artist.
-Nous pouvons créer un enregistrement, le lire, le modifier, et le supprimer (CRUD).
+Nous pouvons créer un enregistrement, le lire, le modifier, et le supprimer (CRUD) ; ceci grâce à une API rest.
+Vous pouvez consulter les sources du projet sur le [github de la promo](https://github.com/Simplon-Webdev-Nantes-2020/jukebox-simple-crud).  
+Ensuite, vous approfondirez vos connaissances en ajoutant des albums. Ce sera le sujet du chapitre [Une api rest](../../api_rest/).  
+
+Voici la classe à développer :
 
 ![classe artiste](artiste.jpeg)
 
@@ -30,19 +32,22 @@ met à jour l'enregistrement Artiste correspondant à l'id fourni avec les infor
 * DELETE /jukebox/artists/[id]  
 supprime l'enregistrement Artiste correspondant à l'id fourni.
 
-## Compilation et exécution
+## Création du serveur
 
-Dans la suite du projet, vous utilisez Eclipse pour compiler et exécuter.
+Grâce à [initializr](https://start.spring.io/), vous créez le projet "co.simplon.jukebox".
+Vous ajoutez les dépendances "Spring Web" et "Spring Data JPA".  
+Vous importez votre projet dans Eclipse ou IntelliJ.  
+A partir de là, vous pouvez écrire votre code, le compiler et lancer le serveur.  
 Vous pouvez aussi le faire en ligne de commande dans le dossier racine du projet :  
 `mvnw clean install` pour compiler.  
 `mvnw spring-boot:run` pour lancer le projet.  
 
-Vous pouvez tester l'API avec le logiciel [Postman](https://www.postman.com/downloads/).
+Vous pouvez tester l'API avec le logiciel [Postman](https://www.postman.com/downloads/) ou avec votre navigateur web.
 
 ## JPA
 
 A partir de maintenant, nous allons travailler avec JPA/Hibernate.  
-Pour cela, il faut déclarer une nouvelle dépendance dans le **pom.xml**.
+Pour cela, il faut vérifier la nouvelle dépendance dans le **pom.xml**.
 
 ```xml
 <dependency>
@@ -71,11 +76,12 @@ Il peut avoir un dossier ressource côté test qui servira pour l'exécution des
 ### les properties
 
 Le paramétrage se décrit dans le fichier **application.properties**.
+Ce fichier est situé dans le dossier src/main/ressource.
 
-#### Connection à la base de données
+#### Connexion à la base de données
 
 Spring se comporte comme un client vis à vis de la base de données.
-Il lui faut donc une connection.
+Il lui faut donc une connexion.
 C'est ce que nous déclarons dans le fichier **application.properties**.
 
 ```ini
@@ -88,9 +94,9 @@ spring.h2.console.enabled=true
 ```
 
 Vous remarquez que c'est une base de données h2. Cette base est embarquée dans Spring.
-H2 est très pratique lorsque l'on peut pas installer une base de données sur un serveur.
+H2 est très pratique lorsque l'on ne peut pas installer de base de données sur un serveur.
 C'est aussi très pratique pour exécuter les tests unitaires.
-H2 peut être permanente, ou uniquement en mémoire. C'est ce choix qui est dans Spring.
+H2 peut être permanente, ou uniquement en mémoire. C'est ce choix qui est fait dans ce projet.
 Ceci signifie que lorsque votre serveur Spring tombe, tout est perdu.  
 
 Pour vérifier les données dans la base h2, nous avons ajoutez le paramètre `spring.h2.console.enabled`.
@@ -132,7 +138,8 @@ logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
 ### Les scripts SQL
 
 Pour créer la base de données, nous fournissons dans ce projet le schéma et les données.
-Spring détecte ces fichiers et les exécute au lancement.  
+Ce sont des fichiers sql qui sont pris en compte au démarrage du serveur.  
+Il faut les positionner dans le dossier src/main/resources (au même niveau que application.properties)
 
 Le fichier **schema.sql** :
 
@@ -173,23 +180,24 @@ insert into artist(name, bio, fan_number)
 
 Pour écrire une API Rest, vous devez créer quatre packages :
 
-* artiste.model pour l'entité
-* artiste.repository pour le lien avec la base de données
-* artiste.service pour la couche métier
-* artiste.controller pour le contrôleur
+* co.simplon.jukebox.artiste.model pour l'entité
+* co.simplon.jukebox.artiste.repository pour le lien avec la base de données
+* co.simplon.jukebox.artiste.service pour la couche métier
+* co.simplon.jukebox.artiste.controller pour le contrôleur
 
-Un package ne contient en général une seule classe.  
+Dans ce projet, un package ne contient en général qu'une seule classe.
+Chaque package est associé à un rôle.  
 
-Chaque package est associé à un rôle.
-Si vous devez gérer une autre entité, vous créerez 4 autres package (album.model, album.repository, album.service, album.controller).  
 Le modèle MVC sépare le code en 3 responsabilités.
-Lorsque l'on écrit une api rest, la vue est tronquée car celle-ci est gérée par une autre application.
-Donc dans une API rest, la vue c'est la donnée envoyée au format JSON.
+Lorsque l'on écrit une api rest, la partie vue est presque inexistante car celle-ci est gérée par une autre application.
+La vue se résume à l'envoi de données au format JSON.
 Spring fait cette action à notre place.  
+
 Reste le contrôleur et le modèle.
-Le modèle, c'est l"entité décrite dans la package model.
+Le modèle, c'est l"entité décrite dans le package model.
 A ce package, s'ajoute le package repository.  
 Le contrôleur, c'est le package controller, associé au package service.  
+
 Allons vite voir cela en détail.
 
 ## Le modèle
@@ -204,7 +212,6 @@ public class Artist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name can't be empty")
     private String name;
 
     private String bio;
@@ -240,21 +247,19 @@ public class Artist {
 
 La visibilité des attributs est privée, et nous utilisons les getter/setter pour accéder à leur valeur.  
 C'est ici que ce fait le mapping entre la classe @Entity et la base de données.
-La classe Artist est reliée à la table artiste de la base de données, et les attributs deviennent des champs.
+La classe Artist est reliée à la table *artist* de la base de données, et les attributs deviennent des champs.
 Tout champ écrit en camel case est traduit en snake case.  
-Nous notons aussi des annotations : @Entity, @Id, @NotBlank.
+Nous notons aussi des annotations : @Entity, @Id, @GeneratedValue.
 
 * [@Entity](/docs/spring/parametrage/annotation/#annotations_sur_l_entit) indique à Spring qu'il s'agit d'une entité (un modèle).
 * [@id](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) identifie la clef primaire.
 * [@GeneratedValue](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) indique que la clef primaire est calculée.  
 `(strategy = GenerationType.IDENTITY)` indique que c'est un id auto-incrémenté.
-* [@NotBlank](/docs/spring/parametrage/annotation/#annotation_sur_les_champs) peut être mis sur chaque attribut. Il signifie que la valeur ne pas pas être nulle.  
-`(message = "Name can't be empty")` est le message renvoyé si le client voulait valider cet enregistrement avec une valeur interdite.
 
 ## Un petit test de vérification
 
 Après avoir créer votre projet avec Initializr et créer votre Entity, il est intéressant de tester votre site et vérifier qu'il répond à une requête simple.  
-Pour cela, on crée le contrôleur et ajouter une méthode de test.
+Pour cela, on crée le contrôleur et on ajoute une route de test (/jukebox/artist/hello).
 
 ```java
 @RestController
@@ -348,7 +353,7 @@ D'abord étudions les annotations, puis regardons chaque méthode.
 ### Annotations du service
 
 * [@Service](/docs/spring/parametrage/annotation/#component_repository_service) indique que c'est un service
-* [@Autowired](/docs/spring/parametrage/annotation/#autowired_ou_inject) indique que nous utilisons le modèle Artiste et plus précisément l'interface ArtistRepository. C'est une injection, donc c'est Spring qui s'occupe de l'instanciation.
+* [@Autowired](/docs/spring/parametrage/annotation/#autowired_ou_inject) indique que nous utilisons le modèle Artist et plus précisément l'interface ArtistRepository. C'est une injection, donc c'est Spring qui s'occupe de l'instanciation.
 
 ### findAll
 
@@ -365,7 +370,7 @@ Cette méthode retourne tous les artistes sous forme de liste.
 Quand le paramètre search est vide, elle appelle la méthode findall() de ArtistRepository.
 Or cette méthode n'est pas déclarée.
 En fait ArtistRepository hérite de JpaRepository.
-Grace à un système d'injection de dépendance (DI), Spring trouve dans son architecture la bonne classe qui est capable d'exécuter la requête SQL.  
+Grâce à un système d'injection de dépendance (DI), Spring trouve dans son architecture la bonne classe qui est capable d'exécuter la requête SQL.  
 Quand le paramètre search est renseigné, elle appelle la méthode findByNameContaining(search).
 Cette méthode est déclarée mais pas implémentée. Spring a prévu pour nous cette situation et donc possède dans ses réserves du code pour exécuter la requête `SQL select ... where artist.name like ...`.
 
@@ -438,7 +443,7 @@ Elle appelle la méthode delete() du modèle.
 
 ## Le contrôleur
 
-Ici nous sommes au niveau de l'URL, c'est à dire le I (Interface) de l'API.
+Ici nous sommes au niveau de l'URL, c'est à dire le **I** (Interface) du mot **API**.
 C'est une API Rest (appellée aussi restFull), la ressource est la donnée que nous partageons avec le client.
 Ici la resource est identifiée par l'URL, et c'est l'id qui différencie chaque resource.
 
@@ -464,13 +469,13 @@ public class ArtistController {
 
     @CrossOrigin
     @PostMapping("/artists")
-     ResponseEntity<Artist> addArtist(@Valid @RequestBody Artist artist){
+     ResponseEntity<Artist> addArtist(@RequestBody Artist artist){
         ...
     }
 
     @CrossOrigin
     @PutMapping("/artists/{id}")
-    ResponseEntity<Artist> updateArtiste(@PathVariable(value="id") long id, @Valid @RequestBody Artist artist){
+    ResponseEntity<Artist> updateArtiste(@PathVariable(value="id") long id, @RequestBody Artist artist){
         ...
     }
 
@@ -488,9 +493,9 @@ public class ArtistController {
 Vous retrouverez les explications dans cet [article](/docs/spring/parametrage/annotation/#la_gestion_des_url) du blog.
 
 * `@RestController`  
-indique que c'est une contrôleur
+indique que c'est un contrôleur
 * `@RequestMapping("/jukebox")`  
-Contrôleur que s'accupe de toutes les url commençant par /jukebox
+Contrôleur que s'occupe de toutes les url commençant par /jukebox
 * `@Autowired`  
 injection du service
 * `@CrossOrigin`  
@@ -510,8 +515,6 @@ récupère un paramètre dans l'URL après le endpoint (séparateur ?)
 récupère un paramètre dans l'URL (path)
 * `@RequestBody`  
 récupère les infos dans le body
-* `@Valid`  
-Indique que l'on contrôle la validité des informations envoyées
 
 ### GET /artists
 
@@ -554,23 +557,20 @@ Le type Optional contient un objet Artist, il évite le `nullPointerException`.
 
 ```java
 @PostMapping("/artists")
-    ResponseEntity<Artist> addArtist(@Valid @RequestBody Artist artist){
+    ResponseEntity<Artist> addArtist(@RequestBody Artist artist){
         return ResponseEntity.ok().body(service.insert(artist));
     }
 ```
 
 Cette méthode traite une requête `/jukebox/artists` avec le verbe POST.
-POST est une création de la ressource (Dans un blog, on POSTe un article).
+POST est une création de la ressource.Pour vous en rappeller : dans un blog, on POSTe un article.
 L'artiste est dans le body (`@RequestBody`).
-`@Valid` indique que nous allons vérifier toutes les contraintes sur les attributs (@NotNull, @NotBlank) du modèle.
-S'il y a erreur, la création est ineffective.  
-Nous faisons une petite transgression sur le code réponse. Nous devrions retourner le code 201.
 
 ### PUT /artists
 
 ```java
 @PutMapping("/artists/{id}")
-    ResponseEntity<Artist> updateArtiste(@PathVariable(value="id") long id, @Valid @RequestBody Artist artist){
+    ResponseEntity<Artist> updateArtiste(@PathVariable(value="id") long id, @RequestBody Artist artist){
         Artist updatedArtiste = service.update(id, artist);
         if(updatedArtiste == null)
             return ResponseEntity.notFound().build();
@@ -583,8 +583,6 @@ Cette méthode traite une requête `/jukebox/artists/xxx` avec le verbe PUT.
 PUT est un écrasement de la ressource.
 C'est pour cette raison que l'id est dans le path.
 L'artiste est dans le body (`@RequestBody`).
-`@Valid` indique que nous allons vérifier toutes les contraintes sur les attributs (@NotNull, @NotBlank) du modèle.
-S'il y a erreur, la mise à jour est ineffective.
 
 ### DELETE /artists
 
