@@ -42,6 +42,15 @@ ResponseEntity<Artist> addArtist(@Valid @RequestBody Artist artist){
 }
 ```
 
+Pour utiliser ces annotations, il faut ajouter dans le projet la dépendance spring-boot-starter-validation :
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+```
+
 ### Tableau des validations possibles
 
 Annotation|Contrôle
