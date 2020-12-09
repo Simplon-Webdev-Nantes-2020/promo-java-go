@@ -45,7 +45,7 @@ Nous allons les étudier dans notre projet.
 
 ## Une classe sans relation
 
-C'est le cas du premier projet où Artist est seul.
+C'est le cas du premier projet où la classe `Artist` est seule.
 Aucune annotation Jackson, tout fonctionne bien.
 
 ## Une relation bidirectionnelle
@@ -56,8 +56,9 @@ Trois relations bidirectionnelles et trois façons de la gérer.
 
 Cette relation est bidirectionnelle pour les classes.
 C'est une référence cyclique qui fera soit boucler votre application, soit vous n'aurez pas de sérialisation.  
-Nous allons dire à Jackson qui est maître de cette relation, et ce n'est pas forcément le même maître que pour JPA.  
-Nous utilisons l'annotation `@JsonManagedReference` dans la classe Album et l'annotation `@JsonBackReference` dans la classe Track.
+Nous allons indiquer à Jackson qui est maître de cette relation, et ce n'est pas forcément le même maître que pour JPA.  
+Nous utilisons l'annotation `@JsonManagedReference` dans la classe Album et l'annotation `@JsonBackReference` dans la classe Track.  
+`@JsonManagedReference` est la partie qui sera sérialisée. `@JsonBackReference` est la partie omis de la sérialisation.
 
 ```java
 @Entity
@@ -79,10 +80,56 @@ public class Track {
 }
 ```
 
+Ce qui donne le résultat pour
+
+Album :
+
+```json
+{
+    "id": 2,
+    "title": "Le Meilleur de la Musique Irlandaise - Les Plus Beaux Airs Celtiques",
+    "releaseDate": "2014-03-03",
+    "tracks": [
+        {
+            "id": 19,
+            "title": "Riverdance",
+            "duration": 168,
+            "preview": "https://cdns-preview-2.dzcdn.net/stream/c-25dc19d64662ad1d5a5a5a771a368859-4.mp3"
+        },
+        {
+            "id": 20,
+            "title": "Give Me Your Hand",
+            "duration": 143,
+            "preview": "https://cdns-preview-f.dzcdn.net/stream/c-f2d88538cdbba283fb66e9af7d4a704a-4.mp3"
+        },
+        {
+            "id": 21,
+            "title": "The Snowy Breasted Pearl",
+            "duration": 213,
+            "preview": "https://cdns-preview-4.dzcdn.net/stream/c-46e9aa572cffc205e4fa3aecd2424f37-4.mp3"
+        }
+    ]
+}
+```
+
+Track :
+
+```json
+{
+    "id": 3,
+    "title": "Mon univers",
+    "duration": 202,
+    "preview": "https://cdns-preview-f.dzcdn.net/stream/c-fb6c4843fb44d64b3a34028f8b784336-3.mp3"
+}
+```
+
 ### Artist/Album
 
 Même condition que précédemment et une nouvelle solution.
-Nous utilisons l'annotation `@JsonBackReference` dans la classe Artist et l'annotation `@JsonIdentityInfo` dans la classe Album.
+Nous utilisons l'annotation `@JsonBackReference` dans la classe Artist et l'annotation `@JsonIdentityInfo` dans la classe Album.  
+`@JsonBackReference` est la partie omis de la sérialisation.
+`@JsonIdentityInfo` est la partie qui sera sérialisée.  
+`@JsonIdentityReference(alwaysAsId = true)` indique que l'on enverra uniquement l'id de l'artiste
 
 ```java
 @Entity
@@ -100,7 +147,32 @@ public class Album {
     ...
     @ManyToOne @JoinColumn(name = "artist_id")
     @JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
+    @JsonIdentityReference(alwaysAsId = true)
     private Artist artist;
+}
+```
+
+Ce qui donne le résultat pour,
+
+Artist :
+
+```json
+{
+    "id": 1,
+    "name": "Celtic woman",
+    "bio": "En 2004, les producteurs Sharon Browne et David Downes, directeur musical...",
+    "fanNumber": 31760
+}
+```
+
+Album :
+
+```json
+{
+    "id": 2,
+    "title": "Le Meilleur de la Musique Irlandaise - Les Plus Beaux Airs Celtiques",
+    "releaseDate": "2014-03-03",
+    "artist": 1
 }
 ```
 
@@ -121,13 +193,43 @@ public class Track {
 }
 ```
 
-### La quelle
+Ce qui donne le résultat :
+
+```json
+{
+    "id": 1,
+    "name": "celtic",
+    "tracks": [
+        {
+            "id": 20,
+            "title": "Give Me Your Hand",
+            "duration": 143,
+            "preview": "https://cdns-preview-f.dzcdn.net/stream/c-f2d88538cdbba283fb66e9af7d4a704a-4.mp3"
+        },
+        {
+            "id": 22,
+            "title": "Ancient Land",
+            "duration": 163,
+            "preview": "https://cdns-preview-1.dzcdn.net/stream/c-10488f595a176878b63b4dc4041959b5-5.mp3"
+        },
+        {
+            "id": 24,
+            "title": "Moorlough Shore",
+            "duration": 245,
+            "preview": "https://cdns-preview-e.dzcdn.net/stream/c-eb8433459094c30847866d7042ec91e6-6.mp3"
+        }
+    ]
+}
+```
+
+### La quelle choisir
 
 Qu'elle est la meilleure solution ?  
-Sur le Web, vous trouverez souvent le couple @JsonManagedReference/@JsonBackReference.
+Sur le Web, vous trouverez souvent le couple `@JsonManagedReference`/`@JsonBackReference`.
 C'est la plus facile à implémenter. Elle est explicite.
 Cependant, elle n'a pas toujours le comportement désiré.
-Je vous conseille dans ce cas d'essayer @JsonIgnore, puis @JsonIdentityInfo.
+Je vous conseille dans ce cas d'essayer `@JsonIgnore`, puis `@JsonIdentityInfo`.  
+`@JsonIdentityInfo` couplé à `JsonIdentityReference` permet de n'envoyer que l'id de l'objet.  
 C'est ce que nous explique [baeldung](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion).
 
 ## Approfondissez

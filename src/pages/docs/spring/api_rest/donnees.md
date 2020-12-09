@@ -175,8 +175,7 @@ Un album est écrit par un artiste et contient des pistes. Voici un objet album 
             "duration": 213,
             "preview": "https://cdns-preview-4.dzcdn.net/stream/c-46e9aa572cffc205e4fa3aecd2424f37-4.mp3"
         }
-    ],
-    "releasedate": "2014-03-03"
+    ]
 }
 ```
 
