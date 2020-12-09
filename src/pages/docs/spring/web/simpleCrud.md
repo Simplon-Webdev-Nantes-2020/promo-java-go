@@ -35,7 +35,7 @@ supprime l'enregistrement Artiste correspondant à l'id fourni.
 ## Création du serveur
 
 Grâce à [initializr](https://start.spring.io/), vous créez le projet "co.simplon.jukebox".
-Vous ajoutez les dépendances "Spring Web" et "Spring Data JPA".  
+Vous ajoutez les dépendances "Spring Web", "Spring Data JPA", et "H2 Database".  
 Vous importez votre projet dans Eclipse ou IntelliJ.  
 A partir de là, vous pouvez écrire votre code, le compiler et lancer le serveur.  
 Vous pouvez aussi le faire en ligne de commande dans le dossier racine du projet :  
@@ -144,9 +144,9 @@ Il faut les positionner dans le dossier src/main/resources (au même niveau que 
 Le fichier **schema.sql** :
 
 ```sql
-CREATE SCHEMA TEST_SCHEMA AUTHORIZATION SA;
+CREATE SCHEMA jukeboxdb AUTHORIZATION SA;
 
-use TEST_SCHEMA;
+use jukeboxdb;
 
 CREATE TABLE artist (
     id   INTEGER   PRIMARY KEY AUTO_INCREMENT,
@@ -159,7 +159,7 @@ CREATE TABLE artist (
 Le fichier **data-h2.sql** :
 
 ```sql
-use TEST_SCHEMA;
+use jukeboxdb;
 insert into artist(name, bio, fan_number)
     values('Celtic woman','En 2004, les producteurs Sharon Browne et David Downes, directeur musical...',31760);
 insert into artist(name, bio, fan_number)
@@ -175,6 +175,17 @@ insert into artist(name, bio, fan_number)
 insert into artist(name, bio, fan_number)
     values ('Nolwenn Leroy','C''est le 28 septembre 1982 que voit le jour, à Saint-Renan (Finistère) que voile jour Nolwenn Le Magueresse',230900);
 ```
+
+## Vérification
+
+Vérifiez que votre serveur fonctionne bien et se connecte à la base de données.  
+Sous Eclipse ou Intellij, lancer votre application Spring. Regarder les messages dans la console.  
+Dans le navigateur Web, exécutez l'url localhost:8080/h2-console. Si rien ne s'affiche, vérifiez :
+
+* l'url de la base : jdbc:h2:mem:jukebox
+* la présence des 3 dépendances dans votre projet (web, jpa, h2).
+* les scripts sql sont présents
+* le nom du schéma de la base est correct et le même dans tous les scripts.
 
 ## Le rôle de chaque classe
 
@@ -267,7 +278,7 @@ Pour cela, on crée le contrôleur et on ajoute une route de test (/jukebox/arti
 public class ArtistController {
 
     @CrossOrigin
-    @GetMapping("/artist/hello")
+    @GetMapping("/artists/hello")
     ResponseEntity<Artist> getArtistToto() {
         Artist hello = new Artist();
         hello.setName("Hello");
@@ -277,6 +288,8 @@ public class ArtistController {
     }
 }
 ```
+
+Testez sur votre navigateur [localhost:8080/jukebox/artists/hello](localhost:8080/jukebox/artists/hello).
 
 Nous reviendrons sur les annotations.
 
