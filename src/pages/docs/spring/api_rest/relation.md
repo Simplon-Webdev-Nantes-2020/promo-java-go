@@ -52,7 +52,10 @@ public class Artist {
 `Artist` contient plusieurs albums, on utilise une `List` générique typé `Album`.  
 L'annotation `@OneToMany(mappedBy = "artist")` indique que nous sommes de l'autre côté de la relation.
 Il est inutile de décrire à nouveau la relation.
-C'est l'attribut `mappedBy` qui l'explique en indiquant l'attribut d'`Album` concerné, ici `private Artist artist`.
+C'est l'attribut `mappedBy` qui l'indique.  
+Que signifie `artist` dans `mappedBy = "artist"` ?  
+`artist` est un attribut de la la classe `Album`.
+Si `Album` avait eu l'attribut `myArtist`, on aurait écrit ``mappedBy = "myArtist"``.
 
 ### Les albums de l'artiste
 
