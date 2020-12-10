@@ -150,12 +150,7 @@ Un album est écrit par un artiste et contient des pistes. Voici un objet album 
     "id": 2,
     "title": "Le Meilleur de la Musique Irlandaise - Les Plus Beaux Airs Celtiques",
     "releaseDate": "2014-03-03",
-    "artist": {
-        "id": 1,
-        "name": "Celtic woman",
-        "bio": "En 2004, les producteurs Sharon Browne et David Downes, directeur musical...",
-        "fanNumber": 31760
-    },
+    "artist": 1,
     "tracks": [
         {
             "id": 19,
