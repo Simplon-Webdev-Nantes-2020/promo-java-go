@@ -308,7 +308,7 @@ Aussi étrange que cela puisse paraître, c'est ici que sont générées les req
 Vous en doutez ? Mettez dans la configuration de l'application, une trace des requêtes générées :  
 Dans le fichier application.properties :
 
-```ìni
+```ini
 logging.level.org.hibernate.SQL=DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
 ```
