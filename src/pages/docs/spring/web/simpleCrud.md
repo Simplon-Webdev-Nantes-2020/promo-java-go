@@ -305,7 +305,22 @@ public interface ArtistRepository extends JpaRepository<Artist, Long>{
 ```
 
 Aussi étrange que cela puisse paraître, c'est ici que sont générées les requêtes SQL.  
-Nous savons que c'est le repository du modèle Artist grace au type générique (diamant) de JpaRepository.  
+Vous en doutez ? Mettez dans la configuration de l'application, une trace des requêtes générées :  
+Dans le fichier application.properties :
+
+```ìni
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+```
+
+Et lors d'un accès à la base de données vous aurez ce type de message dans le log :
+
+```log
+2020-12-14 13:28:45.663 DEBUG 12456 --- [nio-8080-exec-3] org.hibernate.SQL                        : select artist0_.id as id1_1_0_, artist0_.bio as bio2_1_0_, artist0_.fan_number as fan_numb3_1_0_, artist0_.name as name4_1_0_ from artist artist0_ where artist0_.id=?
+2020-12-14 13:28:45.663 TRACE 12456 --- [nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [2]
+```
+
+Nous savons que c'est le repository du modèle Artist grâce au type générique (généricité ou notation en diamant) de JpaRepository.  
 C'est la magie de Spring que nous étudierons plus tard.  
 Nous voyons son utilisation dans le service.
 
