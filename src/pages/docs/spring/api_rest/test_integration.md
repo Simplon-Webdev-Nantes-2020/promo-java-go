@@ -5,7 +5,7 @@ template: docs
 doc_sections: spring
 ---
 
-## Définition
+## Introduction
 
 L'intégration est le fait d'assembler plusieurs composants élémentaires et donc d'en faire un nouveau composant de plus haut niveau.  
 Partant de cette définition, un test d'intégration vise à s'assurer du bon fonctionnement de ce nouveau composant.
