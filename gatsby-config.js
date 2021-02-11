@@ -60,35 +60,35 @@ module.exports = {
                 pageContextProperty: `menus`,
             }
         },
-        // {
-        //   resolve: `gatsby-plugin-algolia`,
-        //   options: {
-        //     appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        //     apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        //     queries: require("./src/utils/algolia-queries")
-        //   }
-        // },
-        // {
-        //   resolve: `gatsby-plugin-manifest`,
-        //   options: {
-        //     name: `Promo Java GO`,
-        //     short_name: `javaGo`,
-        //     description: `Support de formation Java / Développeur Web`,
-        //     lang: `fr`,
-        //     start_url: `/`,
-        //     background_color: `#f7f0eb`,
-        //     theme_color: `#a2466c`,
-        //     display: `standalone`,
-        //     icon: `static/images/icon.svg`, // This path is relative to the root of the site.
-        //     cache_busting_mode: 'none'
-        //   },
-        // },
-        // `gatsby-plugin-offline`,
-        // {
-        //   resolve: `gatsby-plugin-sitemap`,
-        //   options: {
-        //     sitemapSize: 5000
-        //   }
-        // }
+        {
+          resolve: `gatsby-plugin-algolia`,
+          options: {
+            appId: process.env.GATSBY_ALGOLIA_APP_ID,
+            apiKey: process.env.ALGOLIA_ADMIN_KEY,
+            queries: require("./src/utils/algolia-queries")
+          }
+        },
+        {
+          resolve: `gatsby-plugin-manifest`,
+          options: {
+            name: `Promo Java GO`,
+            short_name: `javaGo`,
+            description: `Support de formation Java / Développeur Web`,
+            lang: `fr`,
+            start_url: `/`,
+            background_color: `#f7f0eb`,
+            theme_color: `#a2466c`,
+            display: `standalone`,
+            icon: `static/images/icon.svg`, // This path is relative to the root of the site.
+            cache_busting_mode: 'none'
+          },
+        },
+        `gatsby-plugin-offline`,
+        {
+          resolve: `gatsby-plugin-sitemap`,
+          options: {
+            sitemapSize: 5000
+          }
+        }
     ]
 };
