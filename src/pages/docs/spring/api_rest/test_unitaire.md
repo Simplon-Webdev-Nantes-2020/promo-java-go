@@ -21,19 +21,20 @@ Si nous voulons tester le service indépendamment du repository et donc de la ba
 
 ## La base de données
 
-Vous verrez de nombreux exemples de tests qui intègrent une base de données. Cette base est souvent une base h2 car celle-ci est directement intégrée à SpringBoot, donc testable sur toute machine.
+Vous verrez de nombreux exemples de tests qui intègrent une base de données.
+Cette base est souvent une base h2 car celle-ci est directement intégrée à SpringBoot, donc testable sur toute machine.
 Elle a en plus les qualités d'être rapide et non persistante, donc toutes les qualités requises pour faire des tests.  
-La base de données test ne doit pas la même que celle du main et donc être déclarée dans le dossier src/test.  
-Arrêtons nous là ! Nous sommes en train de parler de tests d'intégration.
-Nous utilisons JPA, et JPA nous soulage de l'écriture des requêtes SQL, et par rebond des tests associés.  
-**Donc dans notre cas, nous n'avons pas de base de données pour nos tests unitaires.**  
-Cependant, si vous écrivez des requêtes SQL, il faudra bien les tester.
+La base de données test est alimentée avec un script d'insertion de données. Cette base ne doit pas la même que celle du main et donc être déclarée dans le dossier src/test.  
+Arrêtons nous là ! Nous sommes en train de parler de tests d'intégration.  
+Ici, nous faisons des tests unitaires, et nous utilisons JPA, et JPA nous soulage de l'écriture des requêtes SQL, et par rebond des tests associés. 
+Donc nous ne déclarons pas de base de données, ni insérons de données dans cette base via des scripts.
 
 ## Les tests du repository
 
 Comme nous utilisons l'api JPA, le repository est une interface qui contient peu de code.  
 Nous n'allons tester que les méthodes que nous avons déclarer.
-Nous utilisons la classe `TestEntityManager` qui a le comportement de l'`EntityManager` sans l'accès à la base de données.  
+Nous utilisons la classe `TestEntityManager` qui a le comportement de l'`EntityManager`.  
+`TestEntityManager` va utiliser la base de données h2 intégrée à Springboot. Comme cette base est vide, nous allons l'alimenter avec du code Java.
 Nous utilisons la matrice Agile GIVEN-WHEN-THAT.  
 Dans l'exemple ci-dessous, nous créons 2 artistes (GIVEN).
 Nous recherchons les artistes dont le nom contient "ul" (WHEN).
